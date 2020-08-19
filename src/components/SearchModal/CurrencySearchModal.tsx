@@ -22,6 +22,7 @@ import { useTokenComparator } from './sorting'
 import { PaddedColumn, SearchInput } from './styleds'
 import CurrencyList from './CurrencyList'
 import SortButton from './SortButton'
+import i18next from 'i18next'
 
 interface CurrencySearchModalProps {
   isOpen?: boolean
@@ -144,21 +145,14 @@ export default function CurrencySearchModal({
     >
       <Column style={{ width: '100%' }}>
         <PaddedColumn gap="14px">
-          <RowBetween>
+          <RowBetween lng={i18next.language}>
             <Text fontWeight={500} fontSize={16}>
-              Select a token
-              <QuestionHelper
-                disabled={tooltipOpen}
-                text="Find a token by searching for its name or symbol or by pasting its address below."
-              />
+              {t('selectToken')}
+              <QuestionHelper disabled={tooltipOpen} text={t('swapPage.selectTokenTooltip')} />
             </Text>
             <CloseIcon onClick={onDismiss} />
           </RowBetween>
-          <Tooltip
-            text="Import any token into your list by pasting the token address into the search field."
-            show={tooltipOpen}
-            placement="bottom"
-          >
+          <Tooltip text={t('swapPage.findTokenHelpTooltip')} show={tooltipOpen} placement="bottom">
             <SearchInput
               type="text"
               id="token-search-input"
@@ -176,7 +170,7 @@ export default function CurrencySearchModal({
           )}
           <RowBetween>
             <Text fontSize={14} fontWeight={500}>
-              Token Name
+              {t('swapPage.tokenName')}
             </Text>
             <SortButton ascending={invertSearchOrder} toggleSortOrder={() => setInvertSearchOrder(iso => !iso)} />
           </RowBetween>
@@ -195,7 +189,7 @@ export default function CurrencySearchModal({
           <AutoRow justify={'center'}>
             <div>
               <LinkStyledButton style={{ fontWeight: 500, color: theme.text2, fontSize: 16 }} onClick={openTooltip}>
-                Having trouble finding a token?
+                {t('swapPage.findTokenHelpTitle')}
               </LinkStyledButton>
             </div>
           </AutoRow>

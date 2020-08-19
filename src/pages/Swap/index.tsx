@@ -18,7 +18,7 @@ import confirmPriceImpactWithoutFee from '../../components/swap/confirmPriceImpa
 import { ArrowWrapper, BottomGrouping, Dots, SwapCallbackError, Wrapper } from '../../components/swap/styleds'
 import TradePrice from '../../components/swap/TradePrice'
 import { TokenWarningCards } from '../../components/TokenWarningCard'
-
+import { useTranslation } from 'react-i18next'
 import { BETTER_TRADE_LINK_THRESHOLD, INITIAL_ALLOWED_SLIPPAGE } from '../../constants'
 import { getTradeVersion, isTradeBetter } from '../../data/V1'
 import { useActiveWeb3React } from '../../hooks'
@@ -46,6 +46,7 @@ import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
 import { ClickableText } from '../Pool/styleds'
+import i18next from 'i18next'
 
 export default function Swap() {
   useDefaultsFromURLSearch()
@@ -246,7 +247,7 @@ export default function Swap() {
   const handleAcceptChanges = useCallback(() => {
     setSwapState({ tradeToConfirm: trade, swapErrorMessage, txHash, attemptingTxn, showConfirm })
   }, [attemptingTxn, showConfirm, swapErrorMessage, trade, txHash])
-
+  const { t } = useTranslation()
   return (
     <>
       {showWarning && <TokenWarningCards currencies={currencies} />}
@@ -269,7 +270,7 @@ export default function Swap() {
 
           <AutoColumn gap={'md'}>
             <CurrencyInputPanel
-              label={independentField === Field.OUTPUT && !showWrap ? 'From (estimated)' : 'From'}
+              label={independentField === Field.OUTPUT && !showWrap ? `${t('from')} (${t('estimated')})` : t('from')}
               value={formattedAmounts[Field.INPUT]}
               showMaxButton={!atMaxAmountInput}
               currency={currencies[Field.INPUT]}
@@ -287,7 +288,7 @@ export default function Swap() {
 
             <CursorPointer>
               <AutoColumn justify="space-between">
-                <AutoRow justify="space-between" style={{ padding: '0 1rem' }}>
+                <AutoRow justify="space-between" style={{ padding: '0 1rem' }} lng={i18next.language}>
                   <ArrowWrapper clickable>
                     <ArrowDown
                       size="16"
@@ -300,7 +301,7 @@ export default function Swap() {
                   </ArrowWrapper>
                   {recipient === null && !showWrap ? (
                     <LinkStyledButton id="add-recipient-button" onClick={() => onChangeRecipient('')}>
-                      + Add a send (optional)
+                      {t('swapPage.addASend')}
                     </LinkStyledButton>
                   ) : null}
                 </AutoRow>
@@ -309,7 +310,7 @@ export default function Swap() {
             <CurrencyInputPanel
               value={formattedAmounts[Field.OUTPUT]}
               onUserInput={handleTypeOutput}
-              label={independentField === Field.INPUT && !showWrap ? 'To (estimated)' : 'To'}
+              label={independentField === Field.INPUT && !showWrap ? `${t('to')} (${t('estimated')})` : t('to')}
               showMaxButton={false}
               currency={currencies[Field.OUTPUT]}
               onCurrencySelect={address => onCurrencySelection(Field.OUTPUT, address)}
@@ -336,7 +337,7 @@ export default function Swap() {
                 <AutoColumn gap="4px">
                   <RowBetween align="center">
                     <Text fontWeight={500} fontSize={14} color={theme.text2}>
-                      Price
+                      {t('price')}
                     </Text>
                     <TradePrice
                       inputCurrency={currencies[Field.INPUT]}
@@ -363,7 +364,7 @@ export default function Swap() {
           </AutoColumn>
           <BottomGrouping>
             {!account ? (
-              <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
+              <ButtonLight onClick={toggleWalletModal}>{t('swapPage.connectWallet')}</ButtonLight>
             ) : showWrap ? (
               <ButtonPrimary disabled={Boolean(wrapInputError)} onClick={onWrap}>
                 {wrapInputError ??

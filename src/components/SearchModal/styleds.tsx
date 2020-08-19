@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 import { AutoColumn } from '../Column'
 import { RowBetween, RowFixed } from '../Row'
+import { getLanguageDirection } from '../../utils/language'
 
 export const ModalInfo = styled.div`
   ${({ theme }) => theme.flexRowNoWrap}
@@ -62,6 +63,7 @@ export const MenuItem = styled(RowBetween)`
 `
 
 export const SearchInput = styled(Input)`
+  direction: ${getLanguageDirection};
   transition: border 100ms;
   :focus {
     border: 1px solid ${({ theme }) => theme.primary1};

@@ -1,4 +1,5 @@
 {
+  "wallet": "Wallet",
   "noWallet": "No Ethereum wallet found",
   "wrongNetwork": "You are on the wrong network",
   "switchNetwork": "Please switch to {{ correctNetwork }}",
@@ -87,5 +88,16 @@
   "forAtLeast": "for at least ",
   "brokenToken": "The selected token is not compatible with Uniswap V1. Adding liquidity will result in locked funds.",
   "toleranceExplanation": "Lowering this limit decreases your risk of frontrunning. However, this makes more likely that your transaction will fail due to normal price movements.",
-  "tokenSearchPlaceholder": "Search name or paste address"
+  "tokenSearchPlaceholder": "Search name or paste address",
+  "from": "From",
+  "price": "Price",
+  "optional": "Optional",
+  "swapPage": {
+    "connectWallet": "Connect Wallet",
+    "addASend": "+ add a send (optional)",
+    "findTokenHelpTitle": "Having trouble finding a token?",
+    "tokenName": "Token name",
+    "findTokenHelpTooltip": "Import any token into your list by pasting the token address into the search field.",
+    "selectTokenTooltip": "Find a token by searching for its name or symbol or by pasting its address below."
+  }
 }

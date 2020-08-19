@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import i18next from 'i18next'
 
-export const BodyWrapper = styled.div<{ disabled?: boolean; lng?: string }>`
-  direction: ${({ lng }) => (lng === 'fa' ? 'rtl' : 'ltr')};
+import { getLanguageDirection } from '../utils/language'
+
+export const BodyWrapper = styled.div<{ disabled?: boolean }>`
+  direction: ${getLanguageDirection};
   position: relative;
   max-width: 420px;
   width: 100%;
@@ -20,9 +21,5 @@ export const BodyWrapper = styled.div<{ disabled?: boolean; lng?: string }>`
  * The styled container element that wraps the content of most pages and the tabs.
  */
 export default function AppBody({ children, disabled }: { children: React.ReactNode; disabled?: boolean }) {
-  return (
-    <BodyWrapper disabled={disabled} lng={i18next.language}>
-      {children}
-    </BodyWrapper>
-  )
+  return <BodyWrapper disabled={disabled}>{children}</BodyWrapper>
 }

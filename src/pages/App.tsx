@@ -35,7 +35,8 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
 `
 
-const BodyWrapper = styled.div`
+const BodyWrapper = styled.div<{ lng?: string }>`
+  direction: ${({ lng }) => (lng === 'fa' ? 'rtl' : 'ltr')};
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -14,9 +14,8 @@ i18next
     react: {
       useSuspense: true
     },
-    keySeparator: false,
     interpolation: { escapeValue: false },
-    fallbackLng: 'en',
+    fallbackLng: 'fa',
     lng: 'fa',
     preload: ['fa', 'en'],
     defaultNS: 'fa'
