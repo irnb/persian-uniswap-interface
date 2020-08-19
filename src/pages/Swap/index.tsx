@@ -253,7 +253,6 @@ export default function Swap() {
       <AppBody disabled={showWarning}>
         <SwapPoolTabs active={'swap'} />
         <Wrapper id="swap-page">
-          <Navid />
           <ConfirmSwapModal
             isOpen={showConfirm}
             trade={trade}
@@ -455,8 +454,3 @@ export default function Swap() {
     </>
   )
 }
-const Navid = styled.div`
-  height: 3rem;
-  width: auto;
-  background-color: red;
-`
