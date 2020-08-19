@@ -92,12 +92,18 @@
   "from": "From",
   "price": "Price",
   "optional": "Optional",
+  "approved": "Approved",
+  "approve": "Approve",
+  "slippageTolerance": "Slippage Tolerance",
   "swapPage": {
     "connectWallet": "Connect Wallet",
     "addASend": "+ add a send (optional)",
     "findTokenHelpTitle": "Having trouble finding a token?",
     "tokenName": "Token name",
     "findTokenHelpTooltip": "Import any token into your list by pasting the token address into the search field.",
-    "selectTokenTooltip": "Find a token by searching for its name or symbol or by pasting its address below."
+    "selectTokenTooltip": "Find a token by searching for its name or symbol or by pasting its address below.",
+    "priceImpactTooHigh": "Price Impact Too High",
+    "priceImpactHigh": "Price Impact High",
+    "insufficientLiquidity": "Insufficient liquidity for this trade."
   }
 }
