@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ReactGA from 'react-ga'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { isMobile } from 'react-device-detect'
 import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
 import usePrevious from '../../hooks/usePrevious'

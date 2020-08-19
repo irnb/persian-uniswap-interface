@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useState } from 'react'
 import { X } from 'react-feather'
-import styled, { ThemeContext } from 'styled-components'
+import styled, { ThemeContext } from 'styled-components/macro'
 import useInterval from '../../hooks/useInterval'
 import { PopupContent } from '../../state/application/actions'
 import { useRemovePopup } from '../../state/application/hooks'

@@ -2,7 +2,7 @@ import { Currency, CurrencyAmount, currencyEquals, ETHER, JSBI, Token } from '@u
 import React, { CSSProperties, memo, useContext, useMemo } from 'react'
 import { FixedSizeList } from 'react-window'
 import { Text } from 'rebass'
-import { ThemeContext } from 'styled-components'
+import { ThemeContext } from 'styled-components/macro'
 import { useActiveWeb3React } from '../../hooks'
 import { useAllTokens } from '../../hooks/Tokens'
 import { useDefaultTokenList } from '../../state/lists/hooks'

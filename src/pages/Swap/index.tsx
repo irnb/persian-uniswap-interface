@@ -3,7 +3,7 @@ import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { ArrowDown } from 'react-feather'
 import ReactGA from 'react-ga'
 import { Text } from 'rebass'
-import { ThemeContext } from 'styled-components'
+import styled, { ThemeContext } from 'styled-components/macro'
 import AddressInputPanel from '../../components/AddressInputPanel'
 import { ButtonError, ButtonLight, ButtonPrimary } from '../../components/Button'
 import Card, { GreyCard } from '../../components/Card'
@@ -253,6 +253,7 @@ export default function Swap() {
       <AppBody disabled={showWarning}>
         <SwapPoolTabs active={'swap'} />
         <Wrapper id="swap-page">
+          <Navid />
           <ConfirmSwapModal
             isOpen={showConfirm}
             trade={trade}
@@ -454,3 +455,8 @@ export default function Swap() {
     </>
   )
 }
+const Navid = styled.div`
+  height: 3rem;
+  width: auto;
+  background-color: red;
+`

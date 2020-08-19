@@ -9,7 +9,7 @@ import { RowBetween, RowFixed } from '../Row'
 import { FixedHeightRow, HoverCard } from './index'
 import DoubleCurrencyLogo from '../DoubleLogo'
 import { useActiveWeb3React } from '../../hooks'
-import { ThemeContext } from 'styled-components'
+import { ThemeContext } from 'styled-components/macro'
 
 interface PositionCardProps extends RouteComponentProps<{}> {
   token: Token

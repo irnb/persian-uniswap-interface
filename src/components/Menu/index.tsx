@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { Info, BookOpen, Code, PieChart, MessageCircle } from 'react-feather'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 import useToggle from '../../hooks/useToggle'
 

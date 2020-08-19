@@ -3,7 +3,7 @@ import React from 'react'
 import { isMobile } from 'react-device-detect'
 import { Text } from 'rebass'
 
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import Logo from '../../assets/svg/logo.svg'
 import LogoDark from '../../assets/svg/logo_white.svg'

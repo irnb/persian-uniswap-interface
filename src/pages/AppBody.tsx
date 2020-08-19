@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import i18next from 'i18next'
 
 export const BodyWrapper = styled.div<{ disabled?: boolean; lng?: string }>`

@@ -1,7 +1,7 @@
 import { Currency, Token } from '@uniswap/sdk'
 import { transparentize } from 'polished'
 import React, { useMemo } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { useActiveWeb3React } from '../../hooks'
 import { useAllTokens } from '../../hooks/Tokens'
 import { useDefaultTokenList } from '../../state/lists/hooks'
