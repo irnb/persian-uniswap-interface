@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components/macro'
 import { darken } from 'polished'
 import { ArrowLeft, X } from 'react-feather'
+import { getLanguageDirection } from '../utils/language'
 
 export const Button = styled.button.attrs<{ warning: boolean }, { backgroundColor: string }>(({ warning, theme }) => ({
   backgroundColor: warning ? theme.red1 : theme.primary1
@@ -41,6 +42,7 @@ export const CloseIcon = styled(X)<{ onClick: () => void }>`
 
 // A button that triggers some onClick result, but looks like a link.
 export const LinkStyledButton = styled.button`
+  direction: ${getLanguageDirection};
   border: none;
   text-decoration: none;
   background: none;

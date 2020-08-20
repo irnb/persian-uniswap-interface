@@ -104,6 +104,7 @@
     "selectTokenTooltip": "Find a token by searching for its name or symbol or by pasting its address below.",
     "priceImpactTooHigh": "Price Impact Too High",
     "priceImpactHigh": "Price Impact High",
-    "insufficientLiquidity": "Insufficient liquidity for this trade."
+    "insufficientLiquidity": "Insufficient liquidity for this trade.",
+    "removeSend": "- Remove Send"
   }
 }

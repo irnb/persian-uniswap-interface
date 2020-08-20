@@ -13,6 +13,7 @@ import { ReactComponent as DropDown } from '../../assets/images/dropdown.svg'
 
 import { useActiveWeb3React } from '../../hooks'
 import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
 
 const InputRow = styled.div<{ selected: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
@@ -165,7 +166,7 @@ export default function CurrencyInputPanel({
       <Container hideInput={hideInput}>
         {!hideInput && (
           <LabelRow>
-            <RowBetween>
+            <RowBetween lng={i18next.language}>
               <TYPE.body color={theme.text2} fontWeight={500} fontSize={14}>
                 {label}
               </TYPE.body>
