@@ -20,8 +20,11 @@ import { usePairs } from '../../data/Reserves'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import AppBody from '../AppBody'
 import { Dots } from '../../components/swap/styleds'
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
 
 export default function Pool() {
+  const { t } = useTranslation()
   const theme = useContext(ThemeContext)
   const { account } = useActiveWeb3React()
 
@@ -63,28 +66,28 @@ export default function Pool() {
         <AutoColumn gap="lg" justify="center">
           <ButtonPrimary id="join-pool-button" as={Link} style={{ padding: 16 }} to="/add/ETH">
             <Text fontWeight={500} fontSize={20}>
-              Add Liquidity
+              {t('poolPage.addLiquidity')}
             </Text>
           </ButtonPrimary>
 
           <AutoColumn gap="12px" style={{ width: '100%' }}>
-            <RowBetween padding={'0 8px'}>
+            <RowBetween padding={'0 8px'} lng={i18next.language}>
               <Text color={theme.text1} fontWeight={500}>
-                Your Liquidity
+                {t('poolPage.yourLiquidity')}
               </Text>
-              <Question text="When you add liquidity, you are given pool tokens that represent your share. If you don’t see a pool you joined in this list, try importing a pool below." />
+              <Question text={t('poolPage.yourLiquidityTooltip')} />
             </RowBetween>
 
             {!account ? (
               <LightCard padding="40px">
                 <TYPE.body color={theme.text3} textAlign="center">
-                  Connect to a wallet to view your liquidity.
+                  {t('poolPage.connectToWallet')}
                 </TYPE.body>
               </LightCard>
             ) : v2IsLoading ? (
               <LightCard padding="40px">
                 <TYPE.body color={theme.text3} textAlign="center">
-                  <Dots>Loading</Dots>
+                  <Dots>{t('loading')}</Dots>
                 </TYPE.body>
               </LightCard>
             ) : allV2PairsWithLiquidity?.length > 0 ? (
@@ -96,16 +99,16 @@ export default function Pool() {
             ) : (
               <LightCard padding="40px">
                 <TYPE.body color={theme.text3} textAlign="center">
-                  No liquidity found.
+                  {t('poolPage.noLiquidity')}
                 </TYPE.body>
               </LightCard>
             )}
 
             <div>
               <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
-                {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
+                {hasV1Liquidity ? t('poolPage.v1Found') : t('poolPage.withoutPool')}{' '}
                 <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
-                  {hasV1Liquidity ? 'Migrate now.' : 'Import it.'}
+                  {hasV1Liquidity ? t('poolPage.importNow') : t('poolPage.importIt')}
                 </StyledInternalLink>
               </Text>
             </div>
@@ -115,7 +118,7 @@ export default function Pool() {
 
       <div style={{ display: 'flex', alignItems: 'center', marginTop: '1.5rem' }}>
         <ButtonSecondary as={Link} style={{ width: 'initial' }} to="/migrate/v1">
-          Migrate V1 Liquidity
+          {t('poolPage.migrateV1')}
         </ButtonSecondary>
       </div>
     </>
