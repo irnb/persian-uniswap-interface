@@ -5,6 +5,8 @@ import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 import useToggle from '../../hooks/useToggle'
 
 import { ExternalLink } from '../../theme'
+import { useTranslation } from 'react-i18next'
+import { setLanguageDirection, setMarginStart, setMarginEnd } from '../../utils/language'
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
@@ -48,7 +50,9 @@ const StyledMenu = styled.div`
 `
 
 const MenuFlyout = styled.span`
+  direction: ${() => setLanguageDirection()};
   min-width: 8.125rem;
+  width: max-content;
   background-color: ${({ theme }) => theme.bg3};
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
     0px 24px 32px rgba(0, 0, 0, 0.01);
@@ -56,6 +60,7 @@ const MenuFlyout = styled.span`
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   font-size: 1rem;
   position: absolute;
   top: 3rem;
@@ -63,7 +68,7 @@ const MenuFlyout = styled.span`
   z-index: 100;
 `
 
-const MenuItem = styled(ExternalLink)`
+const MenuItem = styled(ExternalLink)<{ marginEnd?: string }>`
   flex: 1;
   padding: 0.5rem 0.5rem;
   color: ${({ theme }) => theme.text2};
@@ -73,13 +78,14 @@ const MenuItem = styled(ExternalLink)`
     text-decoration: none;
   }
   > svg {
-    margin-right: 8px;
+    ${({ marginEnd }) => marginEnd && setMarginEnd('8px')}
   }
 `
 
 const CODE_LINK = 'https://github.com/Uniswap/uniswap-interface'
 
 export default function Menu() {
+  const { t } = useTranslation()
   const node = useRef<HTMLDivElement>()
   const [open, toggle] = useToggle(false)
 
@@ -109,25 +115,25 @@ export default function Menu() {
       </StyledMenuButton>
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://uniswap.org/">
+          <MenuItem id="link" href="https://uniswap.org/" marginEnd="8px">
             <Info size={14} />
-            About
+            {t('menu.about')}
           </MenuItem>
-          <MenuItem id="link" href="https://uniswap.org/docs/v2">
+          <MenuItem id="link" href="https://uniswap.org/docs/v2" marginEnd="8px">
             <BookOpen size={14} />
-            Docs
+            {t('menu.docs')}
           </MenuItem>
-          <MenuItem id="link" href={CODE_LINK}>
+          <MenuItem id="link" href={CODE_LINK} marginEnd="8px">
             <Code size={14} />
-            Code
+            {t('menu.code')}
           </MenuItem>
-          <MenuItem id="link" href="https://discord.gg/EwFs3Pp">
+          <MenuItem id="link" href="https://discord.gg/EwFs3Pp" marginEnd="8px">
             <MessageCircle size={14} />
-            Discord
+            {t('menu.discord')}
           </MenuItem>
-          <MenuItem id="link" href="https://uniswap.info/">
+          <MenuItem id="link" href="https://uniswap.info/" marginEnd="8px">
             <PieChart size={14} />
-            Analytics
+            {t('menu.analytics')}
           </MenuItem>
         </MenuFlyout>
       )}

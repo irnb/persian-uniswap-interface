@@ -97,6 +97,7 @@
   "loading": "درحال بارگزاری",
   "off": "خاموش",
   "on": "روشن",
+  "areYouSure": "مطمئنید؟",
   "swapPage": {
     "connectWallet": "اتصال $t(wallet)",
     "addASend": "+ اضافه کردن ارسال ($t(optional))",
@@ -121,16 +122,30 @@
     "importIt": "یکی وارد کنید.",
     "importNow": "حالا وارد کنید."
   },
-  "header": {
+  "setting": {
     "transactionSettings": "تنظیمات تراکنش‌ها",
     "interfaceSettings": "تنظیمات ظاهری",
-    "toggleExpertMode": " کاربر حرفه ای",
+    "toggleExpertMode": " استفاده حرفه ای",
     "toggleExpertModeTooltip": ".با روشن کردن این گزینه، «ماژول های محافظت از ضرر بیش از حد» کنار گذاشته می‌شود. این کار ریسک بالایی دارد",
     "toggleDarkMode": "تم تیره",
     "slippageTolerance": "تحمل ریزش",
     "slippageToleranceTooltip": "اگر قیمت بیشتر از این درصد افت پیدا کند تراکنش شما مرجوع می‌شود.",
     "transactionDeadline": "مهلت تراکنش",
     "transactionDeadlineTooltip": "اگر تراکنش شما بیشتر از این مدت منتظر بماند، مرجوع می‌شود.",
-    "minutes": "دقیقه"
+    "minutes": "دقیقه",
+    "expertModeWarning": "با فعال کردن گزینه «استفاده حرفه ای» ماژول های محافظت از ضرر بیش از حد، کنارگذاشته می‌شود. این کار معمولا به از دست رفتن سرمایه منجر می‌شود. ",
+    "onlyUseWarning": "تنها در صورتی از این حالت استفاده کنید که به تمام جوانب ریسک های آن آگاه هستید.",
+    "turnOnExpertMode": "روشن کردن استفاده حرفه ای",
+    "confirmExpertWarning": "برای فعال کردن استفاده حرفه ای، لطفا واژه انگلیسی 'confirm' را تایپ و تایید کنید.",
+    "enterValidPercent": "لطفا یک درصد معتبر را وارد کنید.",
+    "transactionFailWarning": "تراکنش شما ممکن است ناموفق گردد.",
+    "transactionFrontrunWarning": "تراکنش شما ممکن است دچار فرانت رانینگ گردد."
+  },
+  "menu": {
+    "about": "درباره ما",
+    "docs": "راهنما",
+    "code": "کد",
+    "discord": "دیسکورد",
+    "analytics": "تجزیه و تحلیل"
   }
 }

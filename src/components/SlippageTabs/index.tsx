@@ -154,9 +154,9 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
       <AutoColumn gap="sm">
         <RowFixed>
           <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
-            {t('header.slippageTolerance')}
+            {t('setting.slippageTolerance')}
           </TYPE.black>
-          <QuestionHelper text={t('header.slippageToleranceTooltip')} />
+          <QuestionHelper text={t('setting.slippageToleranceTooltip')} />
         </RowFixed>
         <RowBetween>
           <Option
@@ -219,10 +219,10 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
             }}
           >
             {slippageError === SlippageError.InvalidInput
-              ? 'Enter a valid slippage percentage'
+              ? t('setting.enterValidPercent')
               : slippageError === SlippageError.RiskyLow
-              ? 'Your transaction may fail'
-              : 'Your transaction may be frontrun'}
+              ? t('setting.transactionFailWarning')
+              : t('setting.transactionFrontrunWarning')}
           </RowBetween>
         )}
       </AutoColumn>
@@ -230,9 +230,9 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
       <AutoColumn gap="sm">
         <RowFixed>
           <TYPE.black fontSize={14} fontWeight={400} color={theme.text2}>
-            {t('header.transactionDeadline')}
+            {t('setting.transactionDeadline')}
           </TYPE.black>
-          <QuestionHelper text={t('header.transactionDeadlineTooltip')} />
+          <QuestionHelper text={t('setting.transactionDeadlineTooltip')} />
         </RowFixed>
         <RowFixed>
           <OptionCustom style={{ width: '80px' }} tabIndex={-1}>
@@ -247,7 +247,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
             />
           </OptionCustom>
           <TYPE.body style={{ paddingLeft: '8px', paddingRight: '8px' }} fontSize={14}>
-            {t('header.minutes')}
+            {t('setting.minutes')}
           </TYPE.body>
         </RowFixed>
       </AutoColumn>

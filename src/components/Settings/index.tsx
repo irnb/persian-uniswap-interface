@@ -116,6 +116,7 @@ const Break = styled.div`
 `
 
 const ModalContentWrapper = styled.div`
+  direction: ${() => setLanguageDirection()};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,34 +167,33 @@ export default function SettingsTab() {
       <Modal isOpen={showConfirmation} onDismiss={() => setShowConfirmation(false)} maxHeight={100}>
         <ModalContentWrapper>
           <AutoColumn gap="lg">
-            <RowBetween style={{ padding: '0 2rem' }}>
+            <RowBetween style={{ padding: '0 2rem' }} dir="ltr">
               <div />
               <Text fontWeight={500} fontSize={20}>
-                Are you sure?
+                {t('areYouSure')}
               </Text>
               <StyledCloseIcon onClick={() => setShowConfirmation(false)} />
             </RowBetween>
             <Break />
             <AutoColumn gap="lg" style={{ padding: '0 2rem' }}>
               <Text fontWeight={500} fontSize={20}>
-                Expert mode turns off the confirm transaction prompt and allows high slippage trades that often result
-                in bad rates and lost funds.
+                {t('setting.expertModeWarning')}
               </Text>
               <Text fontWeight={600} fontSize={20}>
-                ONLY USE THIS MODE IF YOU KNOW WHAT YOU ARE DOING.
+                {t('setting.onlyUseWarning')}
               </Text>
               <ButtonError
                 error={true}
                 padding={'12px'}
                 onClick={() => {
-                  if (window.prompt(`Please type the word "confirm" to enable expert mode.`) === 'confirm') {
+                  if (window.prompt(t('setting.confirmExpertWarning')) === 'confirm') {
                     toggleExpertMode()
                     setShowConfirmation(false)
                   }
                 }}
               >
                 <Text fontSize={20} fontWeight={500}>
-                  Turn On Expert Mode
+                  {t('setting.turnOnExpertMode')}
                 </Text>
               </ButtonError>
             </AutoColumn>
@@ -214,7 +214,7 @@ export default function SettingsTab() {
         <MenuFlyout>
           <AutoColumn gap="md" style={{ padding: '1rem' }}>
             <Text fontWeight={600} fontSize={14} textAlign="start">
-              {t('header.transactionSettings')}
+              {t('setting.transactionSettings')}
             </Text>
             <SlippageTabs
               rawSlippage={userSlippageTolerance}
@@ -223,14 +223,14 @@ export default function SettingsTab() {
               setDeadline={setDeadline}
             />
             <Text fontWeight={600} fontSize={14} textAlign="start">
-              {t('header.interfaceSettings')}
+              {t('setting.interfaceSettings')}
             </Text>
             <RowBetween>
               <RowFixed>
                 <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
-                  {t('header.toggleExpertMode')}
+                  {t('setting.toggleExpertMode')}
                 </TYPE.black>
-                <QuestionHelper text={t('header.toggleExpertModeTooltip')} />
+                <QuestionHelper text={t('setting.toggleExpertModeTooltip')} />
               </RowFixed>
               <Toggle
                 isActive={expertMode}
@@ -250,7 +250,7 @@ export default function SettingsTab() {
             <RowBetween>
               <RowFixed>
                 <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
-                  {t('header.toggleDarkMode')}
+                  {t('setting.toggleDarkMode')}
                 </TYPE.black>
               </RowFixed>
               <Toggle isActive={darkMode} toggle={toggleDarkMode} />
