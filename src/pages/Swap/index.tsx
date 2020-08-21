@@ -288,7 +288,7 @@ export default function Swap() {
 
             <CursorPointer>
               <AutoColumn justify="space-between">
-                <AutoRow justify="space-between" style={{ padding: '0 1rem' }} lng={i18next.language}>
+                <AutoRow justify="space-between" style={{ padding: '0 1rem' }} dir="auto">
                   <ArrowWrapper clickable>
                     <ArrowDown
                       size="16"
@@ -320,7 +320,7 @@ export default function Swap() {
 
             {recipient !== null && !showWrap ? (
               <>
-                <AutoRow justify="space-between" style={{ padding: '0 1rem' }} lng={i18next.language}>
+                <AutoRow justify="space-between" style={{ padding: '0 1rem' }} dir="auto">
                   <ArrowWrapper clickable={false}>
                     <ArrowDown size="16" color={theme.text2} />
                   </ArrowWrapper>
@@ -335,7 +335,7 @@ export default function Swap() {
             {showWrap ? null : (
               <Card padding={'.25rem .75rem 0 .75rem'} borderRadius={'20px'}>
                 <AutoColumn gap="4px">
-                  <RowBetween align="center" lng={i18next.language}>
+                  <RowBetween align="center" dir="auto">
                     <Text fontWeight={500} fontSize={14} color={theme.text2}>
                       {t('price')}
                     </Text>

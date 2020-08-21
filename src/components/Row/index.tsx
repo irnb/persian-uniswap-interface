@@ -1,16 +1,16 @@
 import styled from 'styled-components/macro'
 import { Box } from 'rebass/styled-components'
-import { RtlLanguages } from '../../utils/language'
+import { setLanguageDirection, CssDir } from '../../utils/language'
 
 const Row = styled(Box)<{
   align?: string
   padding?: string
   border?: string
   borderRadius?: string
-  lng?: string
+  dir?: CssDir
 }>`
   width: 100%;
-  direction: ${({ lng }) => (lng in RtlLanguages ? 'rtl' : 'ltr')};
+  direction: ${setLanguageDirection('auto')};
   display: flex;
   padding: 0;
   align-items: ${({ align }) => (align ? align : 'center')};

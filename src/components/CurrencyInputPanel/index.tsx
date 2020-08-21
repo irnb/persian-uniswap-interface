@@ -166,7 +166,7 @@ export default function CurrencyInputPanel({
       <Container hideInput={hideInput}>
         {!hideInput && (
           <LabelRow>
-            <RowBetween lng={i18next.language}>
+            <RowBetween dir="auto">
               <TYPE.body color={theme.text2} fontWeight={500} fontSize={14}>
                 {label}
               </TYPE.body>

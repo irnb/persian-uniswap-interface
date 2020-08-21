@@ -145,7 +145,7 @@ export default function CurrencySearchModal({
     >
       <Column style={{ width: '100%' }}>
         <PaddedColumn gap="14px">
-          <RowBetween lng={i18next.language}>
+          <RowBetween dir="auto">
             <Text fontWeight={500} fontSize={16}>
               {t('selectToken')}
               <QuestionHelper disabled={tooltipOpen} text={t('swapPage.selectTokenTooltip')} />
