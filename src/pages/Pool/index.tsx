@@ -70,7 +70,7 @@ export default function Pool() {
           </ButtonPrimary>
 
           <AutoColumn gap="12px" style={{ width: '100%' }}>
-            <RowBetween padding={'0 8px'} dir="auto">
+            <RowBetween padding={'0 8px'}>
               <Text color={theme.text1} fontWeight={500}>
                 {t('poolPage.yourLiquidity')}
               </Text>

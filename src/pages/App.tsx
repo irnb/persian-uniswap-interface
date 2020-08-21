@@ -37,7 +37,7 @@ const HeaderWrapper = styled.div`
 `
 
 const BodyWrapper = styled.div<{ dir?: CssDir }>`
-  direction: ${setLanguageDirection('auto')};
+  direction: ${({ dir }) => setLanguageDirection(dir)};
   display: flex;
   flex-direction: column;
   width: 100%;

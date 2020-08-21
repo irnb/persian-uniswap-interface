@@ -149,7 +149,6 @@ export default function CurrencyInputPanel({
   showCommonBases
 }: CurrencyInputPanelProps) {
   const { t } = useTranslation()
-
   const [modalOpen, setModalOpen] = useState(false)
   const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account, currency)
@@ -164,7 +163,7 @@ export default function CurrencyInputPanel({
       <Container hideInput={hideInput}>
         {!hideInput && (
           <LabelRow>
-            <RowBetween dir="auto">
+            <RowBetween>
               <TYPE.body color={theme.text2} fontWeight={500} fontSize={14}>
                 {label}
               </TYPE.body>

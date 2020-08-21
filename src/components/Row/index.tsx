@@ -10,7 +10,7 @@ const Row = styled(Box)<{
   dir?: CssDir
 }>`
   width: 100%;
-  direction: ${setLanguageDirection('auto')};
+  direction: ${({ dir }) => setLanguageDirection(dir)};
   display: flex;
   padding: 0;
   align-items: ${({ align }) => (align ? align : 'center')};

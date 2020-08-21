@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-import { getLanguageDirection } from '../utils/language'
+import { setLanguageDirection } from '../utils/language'
 
 export const BodyWrapper = styled.div<{ disabled?: boolean }>`
-  direction: ${getLanguageDirection};
+  direction: ${() => setLanguageDirection()};
   position: relative;
   max-width: 420px;
   width: 100%;

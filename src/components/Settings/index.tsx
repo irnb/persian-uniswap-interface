@@ -19,6 +19,8 @@ import { ButtonError } from '../Button'
 import { useSettingsMenuOpen, useToggleSettingsMenu } from '../../state/application/hooks'
 import { Text } from 'rebass'
 import Modal from '../Modal'
+import { setLanguageDirection, CssDir } from '../../utils/language'
+import { useTranslation } from 'react-i18next'
 
 const StyledMenuIcon = styled(Settings)`
   height: 20px;
@@ -83,7 +85,8 @@ const StyledMenu = styled.div`
   text-align: left;
 `
 
-const MenuFlyout = styled.span`
+const MenuFlyout = styled.span<{ dir?: CssDir }>`
+  direction: ${({ dir }) => setLanguageDirection(dir)};
   min-width: 20.125rem;
   background-color: ${({ theme }) => theme.bg1};
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
@@ -122,6 +125,7 @@ const ModalContentWrapper = styled.div`
 `
 
 export default function SettingsTab() {
+  const { t } = useTranslation()
   const node = useRef<HTMLDivElement>()
   const open = useSettingsMenuOpen()
   const toggle = useToggleSettingsMenu()
@@ -209,8 +213,8 @@ export default function SettingsTab() {
       {open && (
         <MenuFlyout>
           <AutoColumn gap="md" style={{ padding: '1rem' }}>
-            <Text fontWeight={600} fontSize={14}>
-              Transaction Settings
+            <Text fontWeight={600} fontSize={14} textAlign="start">
+              {t('header.transactionSettings')}
             </Text>
             <SlippageTabs
               rawSlippage={userSlippageTolerance}
@@ -218,15 +222,15 @@ export default function SettingsTab() {
               deadline={deadline}
               setDeadline={setDeadline}
             />
-            <Text fontWeight={600} fontSize={14}>
-              Interface Settings
+            <Text fontWeight={600} fontSize={14} textAlign="start">
+              {t('header.interfaceSettings')}
             </Text>
             <RowBetween>
               <RowFixed>
                 <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
-                  Toggle Expert Mode
+                  {t('header.toggleExpertMode')}
                 </TYPE.black>
-                <QuestionHelper text="Bypasses confirmation modals and allows high slippage trades. Use at your own risk." />
+                <QuestionHelper text={t('header.toggleExpertModeTooltip')} />
               </RowFixed>
               <Toggle
                 isActive={expertMode}
@@ -246,7 +250,7 @@ export default function SettingsTab() {
             <RowBetween>
               <RowFixed>
                 <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
-                  Toggle Dark Mode
+                  {t('header.toggleDarkMode')}
                 </TYPE.black>
               </RowFixed>
               <Toggle isActive={darkMode} toggle={toggleDarkMode} />

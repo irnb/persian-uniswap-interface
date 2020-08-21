@@ -94,8 +94,9 @@
   "optional": "اختیاری",
   "approved": "تایید شد",
   "approve": "تایید",
-  "slippageTolerance": "تحمل ریزش",
   "loading": "درحال بارگزاری",
+  "off": "خاموش",
+  "on": "روشن",
   "swapPage": {
     "connectWallet": "اتصال $t(wallet)",
     "addASend": "+ اضافه کردن ارسال ($t(optional))",
@@ -119,5 +120,17 @@
     "withoutPool": "استخری که به آن پیوسته باشید، نمی‌بینید؟",
     "importIt": "یکی وارد کنید.",
     "importNow": "حالا وارد کنید."
+  },
+  "header": {
+    "transactionSettings": "تنظیمات تراکنش‌ها",
+    "interfaceSettings": "تنظیمات ظاهری",
+    "toggleExpertMode": " کاربر حرفه ای",
+    "toggleExpertModeTooltip": ".با روشن کردن این گزینه، «ماژول های محافظت از ضرر بیش از حد» کنار گذاشته می‌شود. این کار ریسک بالایی دارد",
+    "toggleDarkMode": "تم تیره",
+    "slippageTolerance": "تحمل ریزش",
+    "slippageToleranceTooltip": "اگر قیمت بیشتر از این درصد افت پیدا کند تراکنش شما مرجوع می‌شود.",
+    "transactionDeadline": "مهلت تراکنش",
+    "transactionDeadlineTooltip": "اگر تراکنش شما بیشتر از این مدت منتظر بماند، مرجوع می‌شود.",
+    "minutes": "دقیقه"
   }
 }

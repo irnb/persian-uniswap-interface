@@ -94,8 +94,9 @@
   "optional": "Optional",
   "approved": "Approved",
   "approve": "Approve",
-  "slippageTolerance": "Slippage Tolerance",
   "loading": "loading",
+  "off": "Off",
+  "on": "On",
   "swapPage": {
     "connectWallet": "Connect Wallet",
     "addASend": "+ add a send (optional)",
@@ -119,5 +120,17 @@
     "withoutPool": "Don't see a pool you joined?",
     "importIt": "Import it.",
     "importNow": "Import now."
+  },
+  "header": {
+    "transactionSettings": "Transaction Settings",
+    "interfaceSettings": "Interface Settings",
+    "toggleExpertMode": "Toggle Expert Mode",
+    "toggleExpertModeTooltip": "Bypasses confirmation modals and allows high slippage trades. Use at your own risk.",
+    "toggleDarkMode": "toggleDarkMode",
+    "slippageTolerance": "Slippage Tolerance",
+    "slippageToleranceTooltip": "Your transaction will revert if the price changes unfavorably by more than this percentage.",
+    "transactionDeadline": "Transaction deadline",
+    "transactionDeadlineTooltip": "Your transaction will revert if it is pending for more than this long.",
+    "minutes": "minutes"
   }
 }

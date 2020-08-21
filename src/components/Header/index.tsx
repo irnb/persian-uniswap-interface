@@ -142,7 +142,7 @@ export default function Header() {
 
   return (
     <HeaderFrame>
-      <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem">
+      <RowBetween style={{ alignItems: 'flex-start' }} padding="1rem 1rem 0 1rem" dir="ltr">
         <HeaderElement>
           <Title href=".">
             <UniIcon>
