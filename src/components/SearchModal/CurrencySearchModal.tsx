@@ -22,7 +22,6 @@ import { useTokenComparator } from './sorting'
 import { PaddedColumn, SearchInput } from './styleds'
 import CurrencyList from './CurrencyList'
 import SortButton from './SortButton'
-import i18next from 'i18next'
 
 interface CurrencySearchModalProps {
   isOpen?: boolean

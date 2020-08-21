@@ -46,7 +46,6 @@ import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
 import { ClickableText } from '../Pool/styleds'
-import i18next from 'i18next'
 
 export default function Swap() {
   useDefaultsFromURLSearch()

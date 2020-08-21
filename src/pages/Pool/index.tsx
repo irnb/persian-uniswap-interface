@@ -21,7 +21,6 @@ import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks
 import AppBody from '../AppBody'
 import { Dots } from '../../components/swap/styleds'
 import { useTranslation } from 'react-i18next'
-import i18next from 'i18next'
 
 export default function Pool() {
   const { t } = useTranslation()

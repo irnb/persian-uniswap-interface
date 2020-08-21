@@ -10,10 +10,8 @@ import { RowBetween } from '../Row'
 import { TYPE, CursorPointer } from '../../theme'
 import { Input as NumericalInput } from '../NumericalInput'
 import { ReactComponent as DropDown } from '../../assets/images/dropdown.svg'
-
 import { useActiveWeb3React } from '../../hooks'
 import { useTranslation } from 'react-i18next'
-import i18next from 'i18next'
 
 const InputRow = styled.div<{ selected: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
