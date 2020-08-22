@@ -40,7 +40,7 @@
   "youAreBuying": "شما در حال خرید هستید",
   "itWillCost": "این کار هزینه بالایی خواهد داشت!",
   "forAtMost": "حداکثر",
-  "insufficientBalance": "موجودی ناکافی",
+  "insufficientBalance": "موجودی {{currency}} ناکافی است",
   "inputNotValid": "مقدار صحیحی وارد نشده است.",
   "differentToken": "باید توکن های متفاوتی انتخاب کنید.",
   "noRecipient": "آدرس ولت مقصد خود را وارد کنید.",
@@ -49,7 +49,6 @@
   "youAreSending": "در حال ارسال",
   "willReceive": "حداقل دریافت خواهد شد",
   "to": "به",
-  "addLiquidity": "افزودن نقدینگی",
   "deposit": "وثیقه",
   "currentPoolSize": "سایز استخر فعلی",
   "yourPoolShare": "سهم شما از استخر",
@@ -98,8 +97,22 @@
   "off": "خاموش",
   "on": "روشن",
   "areYouSure": "مطمئنید؟",
+  "enterAnAmount": "مبلغ را وارد کنید",
+  "connectWallet": "اتصال به $t(wallet)",
+  "shareOfPool": "سهام شما",
+  "per": "به",
+  "invalidPair": "جفت معتبر نمی‌باشد",
+  "addLiquidity": {
+    "title": "افزودن نقدینگی",
+    "yourPosition": "موقعیت شما",
+    "prices": "مبالغ",
+    "initialPrices": "مبالغ اولیه",
+    "priceAndPoolShare": "{{label}} و سهام استخر",
+    "firstProviderWarning": "شما اولین سپرده گذار این نقدینگی هستید.",
+    "setInitialPriceWarning": "نسبت توکن هایی که شما اضافه می‌کنید، قیمت اولیه این نقدینگی را تعیین می‌کند.",
+    "clickSupplyWarning": "Once you are happy with the rate click supply to review."
+  },
   "swapPage": {
-    "connectWallet": "اتصال $t(wallet)",
     "addASend": "+ اضافه کردن ارسال ($t(optional))",
     "findTokenHelpTitle": "نمی‌توانید توکن مورد نظر خود را پیدا کنید؟",
     "findTokenHelpTooltip": "با وارد کردن آدرس هر توکنی به بخش جستجو، می‌توانید آن را به این لیست اضافه کنید.",
@@ -111,7 +124,6 @@
     "removeSend": "- حذف ارسال"
   },
   "poolPage": {
-    "addLiquidity": "افزودن نقدینگی",
     "yourLiquidity": "نقدینگی شما",
     "yourLiquidityTooltip": "وقتی که شما نقدینگی خود را افزایش می‌دهید، توکن های استخر را دریافت می‌کنید که نشاندهنده سهم شما از استخر می‌باشد. اگر استخری را نمی‌بینید که به آن پیوسته باشید، می‌توایند یک استخر را در قسمت پایین وارد کنید.",
     "connectToWallet": "برای اینکه نقدینگی خود را ببینید، به یک $t(wallet) متصل شوید.",

@@ -40,7 +40,7 @@
   "youAreBuying": "You are buying",
   "itWillCost": "It will cost at most",
   "forAtMost": "for at most",
-  "insufficientBalance": "Insufficient Balance",
+  "insufficientBalance": "Insufficient {{currency}} Balance",
   "inputNotValid": "Not a valid input value",
   "differentToken": "Must be different token.",
   "noRecipient": "Enter a wallet address to send to.",
@@ -49,7 +49,6 @@
   "youAreSending": "You are sending",
   "willReceive": "will receive at least",
   "to": "to",
-  "addLiquidity": "Add Liquidity",
   "deposit": "Deposit",
   "currentPoolSize": "Current Pool Size",
   "yourPoolShare": "Your Pool Share",
@@ -98,8 +97,22 @@
   "off": "Off",
   "on": "On",
   "areYouSure": "Are you sure?",
+  "enterAnAmount": "Enter an amount",
+  "connectWallet": "Connect Wallet",
+  "shareOfPool": "Share of Pool",
+  "per": "per",
+  "invalidPair": "Invalid pair",
+  "addLiquidity": {
+    "title": "Add Liquidity",
+    "yourPosition": "Your Position",
+    "prices": "Price",
+    "initialPrices": "Initial Prices",
+    "priceAndPoolShare": "{{label}} and pool share",
+    "firstProviderWarning": "You are the first liquidity provider.",
+    "setInitialPriceWarning": "The ratio of tokens you add will set the price of this pool.",
+    "clickSupplyWarning": "Once you are happy with the rate click supply to review."
+  },
   "swapPage": {
-    "connectWallet": "Connect Wallet",
     "addASend": "+ add a send (optional)",
     "findTokenHelpTitle": "Having trouble finding a token?",
     "tokenName": "Token name",
@@ -111,7 +124,6 @@
     "removeSend": "- Remove Send"
   },
   "poolPage": {
-    "addLiquidity": "Add Liquidity",
     "yourLiquidity": "Your Liquidity",
     "yourLiquidityTooltip": "When you add liquidity, you are given pool tokens that represent your share. If you don’t see a pool you joined in this list, try importing a pool below.",
     "connectToWallet": "Connect to a wallet to view your liquidity.",

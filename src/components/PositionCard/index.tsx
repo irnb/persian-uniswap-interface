@@ -20,6 +20,7 @@ import CurrencyLogo from '../CurrencyLogo'
 import DoubleCurrencyLogo from '../DoubleLogo'
 import { AutoRow, RowBetween, RowFixed } from '../Row'
 import { Dots } from '../swap/styleds'
+import { useTranslation } from 'react-i18next'
 
 export const FixedHeightRow = styled(RowBetween)`
   height: 24px;
@@ -39,6 +40,7 @@ interface PositionCardProps {
 }
 
 export function MinimalPositionCard({ pair, showUnwrapped = false, border }: PositionCardProps) {
+  const { t } = useTranslation()
   const { account } = useActiveWeb3React()
 
   const currency0 = showUnwrapped ? pair.token0 : unwrappedToken(pair.token0)
@@ -69,7 +71,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
             <FixedHeightRow>
               <RowFixed>
                 <Text fontWeight={500} fontSize={16}>
-                  Your position
+                  {t('addLiquidity.yourPosition')}
                 </Text>
               </RowFixed>
             </FixedHeightRow>
@@ -124,6 +126,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
 }
 
 export default function FullPositionCard({ pair, border }: PositionCardProps) {
+  const { t } = useTranslation()
   const { account } = useActiveWeb3React()
 
   const currency0 = unwrappedToken(pair.token0)
@@ -158,7 +161,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
           <RowFixed>
             <DoubleCurrencyLogo currency0={currency0} currency1={currency1} margin={true} size={20} />
             <Text fontWeight={500} fontSize={20}>
-              {!currency0 || !currency1 ? <Dots>Loading</Dots> : `${currency0.symbol}/${currency1.symbol}`}
+              {!currency0 || !currency1 ? <Dots>{t('loading')}</Dots> : `${currency0.symbol}/${currency1.symbol}`}
             </Text>
           </RowFixed>
           <RowFixed>

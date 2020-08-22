@@ -145,7 +145,7 @@ export default function PoolFinder() {
                 <AutoColumn gap="sm" justify="center">
                   <Text textAlign="center">You don’t have liquidity in this pool yet.</Text>
                   <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
-                    <Text textAlign="center">Add liquidity.</Text>
+                    <Text textAlign="center">{t('addLiquidity.title')}</Text>
                   </StyledInternalLink>
                 </AutoColumn>
               </LightCard>
@@ -163,7 +163,7 @@ export default function PoolFinder() {
             <LightCard padding="45px 10px">
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center" fontWeight={500}>
-                  Invalid pair.
+                  {`${t('invalidPair')}.`}
                 </Text>
               </AutoColumn>
             </LightCard>

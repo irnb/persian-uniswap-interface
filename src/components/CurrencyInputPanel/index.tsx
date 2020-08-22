@@ -57,6 +57,7 @@ const Aligner = styled.span`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  direction: ltr;
 `
 
 const StyledDropDown = styled(DropDown)<{ selected: boolean }>`
@@ -149,6 +150,7 @@ export default function CurrencyInputPanel({
   showCommonBases
 }: CurrencyInputPanelProps) {
   const { t } = useTranslation()
+  if (label === 'Input') label = t('input')
   const [modalOpen, setModalOpen] = useState(false)
   const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account, currency)
@@ -177,7 +179,7 @@ export default function CurrencyInputPanel({
                     style={{ display: 'inline' }}
                   >
                     {!hideBalance && !!currency && selectedCurrencyBalance
-                      ? 'Balance: ' + selectedCurrencyBalance?.toSignificant(6)
+                      ? t('balance', { balanceInput: selectedCurrencyBalance?.toSignificant(6) })
                       : ' -'}
                   </TYPE.body>
                 </CursorPointer>

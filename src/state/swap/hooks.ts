@@ -144,11 +144,11 @@ export function useDerivedSwapInfo(): {
 
   let inputError: string | undefined
   if (!account) {
-    inputError = 'Connect Wallet'
+    inputError = t('connectWallet')
   }
 
   if (!parsedAmount) {
-    inputError = inputError ?? 'Enter an amount'
+    inputError = inputError ?? t('enterAnAmount')
   }
 
   if (!currencies[Field.INPUT] || !currencies[Field.OUTPUT]) {
@@ -179,7 +179,7 @@ export function useDerivedSwapInfo(): {
   ]
 
   if (balanceIn && amountIn && balanceIn.lessThan(amountIn)) {
-    inputError = 'Insufficient ' + amountIn.currency.symbol + ' balance'
+    inputError = t('insufficientBalance', { currency: amountIn.currency.symbol })
   }
 
   return {
