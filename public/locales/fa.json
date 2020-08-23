@@ -27,8 +27,7 @@
   "unknownError": "متاسفانه به ارر برخوردیم. لطفا صفحه را رفرش کنید یا با یک مرورگر یا دستگاه دیگر امتحان کنید.",
   "enterValueCont": "یک {{ missingCurrencyValue }} را برای ادامه وارد کنید.",
   "selectTokenCont": "یک توکن را برای ادامه انتخاب کنید.",
-  "noLiquidity": "بدون نقدینگی.",
-  "insufficientLiquidity": "موجودی ناکافی است.",
+
   "unlockTokenCont": "برای ادامه،‌لطفا توکن را بازگشایی کنید.",
   "transactionDetails": "جزییات پیشرفته",
   "hideDetails": "اختفای جزییات",
@@ -65,9 +64,9 @@
   "youAreSettingExRate": "شما نرخ ارز اولیه را تعیین می کنید",
   "totalSupplyIs0": "جمع موجودی استخر نقدینگی صفر می‌باشد.",
   "tokenWorth": "در نرخ تبدیل فعلی، هر توکن استخر ارزشمند است.",
-  "firstLiquidity": "شما اولین نفری هستید که به این استخرِ نقدینگی تزریق می‌کنید!",
+  "firstLiquidity": "شما اولین نفری هستید که به این استخر نقدینگی تزریق می‌کنید!",
   "initialExchangeRate": "نرخ تبدیل اولیه بر اساس وثیقه شما تنظیم خواهد شد. لطفا مطمئن شوید که میزان ETH و {{ label }} شما ارزش برابری دارند.",
-  "removeLiquidity": "حذف نقدینگی",
+
   "poolTokens": "استخر توکن ها",
   "enterLabelCont": "برای ادامه مقداری {{ label }}  وارد کنید.",
   "youAreRemoving": "شما حذف می‌کنید، بین",
@@ -102,15 +101,24 @@
   "shareOfPool": "سهام شما",
   "per": "به",
   "invalidPair": "جفت معتبر نمی‌باشد",
-  "addLiquidity": {
-    "title": "افزودن نقدینگی",
+  "liquidity": {
+    "add": "افزودن نقدینگی",
+    "remove": "حذف نقدینگی",
+    "noLiquidity": "بدون نقدینگی.",
     "yourPosition": "موقعیت شما",
     "prices": "مبالغ",
     "initialPrices": "مبالغ اولیه",
     "priceAndPoolShare": "{{label}} و سهام استخر",
     "firstProviderWarning": "شما اولین سپرده گذار این نقدینگی هستید.",
     "setInitialPriceWarning": "نسبت توکن هایی که شما اضافه می‌کنید، قیمت اولیه این نقدینگی را تعیین می‌کند.",
-    "clickSupplyWarning": "Once you are happy with the rate click supply to review."
+    "clickSupplyWarning": "Once you are happy with the rate click supply to review.",
+    "creatingPool": "در حال ساخت یک استخر هستید",
+    "willReceive": "دریافت خواهید کرد",
+    "addTooltip": "وقتی شما نقدینگی اضافه می‌کنید،توکن های استخر را دریافت می‌کنید که بیانگر موقعیت شماست. این توکن‌ها به صورت اتوماتیک و متناسب با سهم شما از استخر سود دریافت می‌کنند و هرزمان که مایل باشید قایل بازخرید هستند. ",
+    "removeTooltip": "حذف توکن های استخر، موقعیت شما را نسبت به نرخ تبدیل فعلی و میزان جدید سهام شما از استخر، تغییر می‌دهد.",
+    "approve": "تایید {{token}}",
+    "approving": "درحال تایید {{token}}",
+    "supply": "ذخیره"
   },
   "swapPage": {
     "addASend": "+ اضافه کردن ارسال ($t(optional))",

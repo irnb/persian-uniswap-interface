@@ -81,20 +81,15 @@ export function FindPoolTabs() {
 }
 
 export function AddRemoveTabs({ adding }: { adding: boolean }) {
+  const { t } = useTranslation()
   return (
     <Tabs>
-      <RowBetween style={{ padding: '1rem' }}>
+      <RowBetween style={{ padding: '1rem' }} dir="ltr">
         <HistoryLink to="/pool">
           <StyledArrowLeft />
         </HistoryLink>
-        <ActiveText>{adding ? 'Add' : 'Remove'} Liquidity</ActiveText>
-        <QuestionHelper
-          text={
-            adding
-              ? 'When you add liquidity, you are given pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time.'
-              : 'Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive.'
-          }
-        />
+        <ActiveText>{adding ? t('liquidity.add') : t('liquidity.add')}</ActiveText>
+        <QuestionHelper text={adding ? t('liquidity.addTooltip') : t('liquidity.removeTooltip')} />
       </RowBetween>
     </Tabs>
   )

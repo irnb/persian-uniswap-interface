@@ -27,8 +27,7 @@
   "unknownError": "Oops! An unknown error occurred. Please refresh the page, or visit from another browser or device.",
   "enterValueCont": "Enter a {{ missingCurrencyValue }} value to continue.",
   "selectTokenCont": "Select a token to continue.",
-  "noLiquidity": "No liquidity.",
-  "insufficientLiquidity": "Insufficient liquidity.",
+
   "unlockTokenCont": "Please unlock token to continue.",
   "transactionDetails": "Advanced Details",
   "hideDetails": "Hide Details",
@@ -67,7 +66,6 @@
   "tokenWorth": "At current exchange rate, each pool token is worth",
   "firstLiquidity": "You are the first person to add liquidity!",
   "initialExchangeRate": "The initial exchange rate will be set based on your deposits. Please make sure that your ETH and {{ label }} deposits have the same fiat value.",
-  "removeLiquidity": "Remove Liquidity",
   "poolTokens": "Pool Tokens",
   "enterLabelCont": "Enter a {{ label }} value to continue.",
   "youAreRemoving": "You are removing between",
@@ -102,15 +100,21 @@
   "shareOfPool": "Share of Pool",
   "per": "per",
   "invalidPair": "Invalid pair",
-  "addLiquidity": {
-    "title": "Add Liquidity",
+  "liquidity": {
+    "add": "Add Liquidity",
+    "remove": "Remove Liquidity",
+    "noLiquidity": "No liquidity.",
     "yourPosition": "Your Position",
     "prices": "Price",
     "initialPrices": "Initial Prices",
     "priceAndPoolShare": "{{label}} and pool share",
     "firstProviderWarning": "You are the first liquidity provider.",
     "setInitialPriceWarning": "The ratio of tokens you add will set the price of this pool.",
-    "clickSupplyWarning": "Once you are happy with the rate click supply to review."
+    "clickSupplyWarning": "Once you are happy with the rate click supply to review.",
+    "creatingPool": "You are creating a pool",
+    "willReceive": "You will receive",
+    "addTooltip": "When you add liquidity, you are given pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time.",
+    "removeTooltip": "Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
   },
   "swapPage": {
     "addASend": "+ add a send (optional)",
@@ -121,7 +125,10 @@
     "priceImpactTooHigh": "Price Impact Too High",
     "priceImpactHigh": "Price Impact High",
     "insufficientLiquidity": "Insufficient liquidity for this trade.",
-    "removeSend": "- Remove Send"
+    "removeSend": "- Remove Send",
+    "approve": "Approve {{token}}",
+    "approving": "Approving {{token}}",
+    "supply": "Supply"
   },
   "poolPage": {
     "yourLiquidity": "Your Liquidity",

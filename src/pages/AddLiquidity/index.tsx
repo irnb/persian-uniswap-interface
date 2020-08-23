@@ -317,7 +317,7 @@ export default function AddLiquidity({
             hash={txHash}
             content={() => (
               <ConfirmationModalContent
-                title={noLiquidity ? 'You are creating a pool' : 'You will receive'}
+                title={noLiquidity ? t('liquidity.creatingPool') : t('willReceive')}
                 onDismiss={handleDismissConfirmation}
                 topContent={modalHeader}
                 bottomContent={modalBottom}
@@ -376,8 +376,8 @@ export default function AddLiquidity({
                   <RowBetween padding="1rem">
                     <TYPE.subHeader fontWeight={500} fontSize={14}>
                       {noLiquidity
-                        ? t('addLiquidity.priceAndPoolShare', { label: t('addLiquidity.initialPrices') })
-                        : t('addLiquidity.priceAndPoolShare', { label: t('addLiquidity.prices') })}
+                        ? t('liquidity.priceAndPoolShare', { label: t('liquidity.initialPrices') })
+                        : t('liquidity.priceAndPoolShare', { label: t('liquidity.prices') })}
                     </TYPE.subHeader>
                   </RowBetween>{' '}
                   <LightCard padding="1rem" borderRadius={'20px'}>
@@ -409,9 +409,9 @@ export default function AddLiquidity({
                           width={approvalB !== ApprovalState.APPROVED ? '48%' : '100%'}
                         >
                           {approvalA === ApprovalState.PENDING ? (
-                            <Dots>Approving {currencies[Field.CURRENCY_A]?.symbol}</Dots>
+                            <Dots>{t('liquidity.approving', { token: currencies[Field.CURRENCY_A]?.symbol })}</Dots>
                           ) : (
-                            'Approve ' + currencies[Field.CURRENCY_A]?.symbol
+                            t('liquidity.approve', { token: currencies[Field.CURRENCY_A]?.symbol })
                           )}
                         </ButtonPrimary>
                       )}
@@ -422,9 +422,9 @@ export default function AddLiquidity({
                           width={approvalA !== ApprovalState.APPROVED ? '48%' : '100%'}
                         >
                           {approvalB === ApprovalState.PENDING ? (
-                            <Dots>Approving {currencies[Field.CURRENCY_B]?.symbol}</Dots>
+                            <Dots>{t('liquidity.approving', { token: currencies[Field.CURRENCY_B]?.symbol })}</Dots>
                           ) : (
-                            'Approve ' + currencies[Field.CURRENCY_B]?.symbol
+                            t('liquidity.approve', { token: currencies[Field.CURRENCY_B]?.symbol })
                           )}
                         </ButtonPrimary>
                       )}
@@ -438,7 +438,7 @@ export default function AddLiquidity({
                   error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
                 >
                   <Text fontSize={20} fontWeight={500}>
-                    {error ?? 'Supply'}
+                    {error ?? t('liquidity.supply')}
                   </Text>
                 </ButtonError>
               </AutoColumn>

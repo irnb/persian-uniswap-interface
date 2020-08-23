@@ -71,7 +71,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
             <FixedHeightRow>
               <RowFixed>
                 <Text fontWeight={500} fontSize={16}>
-                  {t('addLiquidity.yourPosition')}
+                  {t('liquidity.yourPosition')}
                 </Text>
               </RowFixed>
             </FixedHeightRow>
