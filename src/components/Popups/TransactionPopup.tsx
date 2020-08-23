@@ -7,6 +7,7 @@ import { ExternalLink } from '../../theme/components'
 import { getEtherscanLink } from '../../utils'
 import { AutoColumn } from '../Column'
 import { AutoRow } from '../Row'
+import { useTranslation } from 'react-i18next'
 
 const RowNoFlex = styled(AutoRow)`
   flex-wrap: nowrap;
@@ -21,6 +22,7 @@ export default function TransactionPopup({
   success?: boolean
   summary?: string
 }) {
+  const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()
 
   const theme = useContext(ThemeContext)
@@ -32,7 +34,9 @@ export default function TransactionPopup({
       </div>
       <AutoColumn gap="8px">
         <TYPE.body fontWeight={500}>{summary ?? 'Hash: ' + hash.slice(0, 8) + '...' + hash.slice(58, 65)}</TYPE.body>
-        <ExternalLink href={getEtherscanLink(chainId, hash, 'transaction')}>View on Etherscan</ExternalLink>
+        <ExternalLink href={getEtherscanLink(chainId, hash, 'transaction')}>
+          {t('transaction.viewOnEtherscan')}
+        </ExternalLink>
       </AutoColumn>
     </RowNoFlex>
   )

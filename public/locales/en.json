@@ -100,6 +100,9 @@
   "shareOfPool": "Share of Pool",
   "per": "per",
   "invalidPair": "Invalid pair",
+  "close": "Close",
+  "dismiss": "Dismiss",
+  "error": "Error",
   "liquidity": {
     "add": "Add Liquidity",
     "remove": "Remove Liquidity",
@@ -114,7 +117,22 @@
     "creatingPool": "You are creating a pool",
     "willReceive": "You will receive",
     "addTooltip": "When you add liquidity, you are given pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time.",
-    "removeTooltip": "Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive."
+    "removeTooltip": "Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive.",
+    "approve": "Approve {{token}}",
+    "approving": "Approving {{token}}",
+    "supply": "Supply",
+    "confirmSupplyWarning": "Output is estimated. If the price changes by more than {{percent}} your transaction will revert.",
+    "poolTokens": "{{symbolA}}/{{symbolB}} $t(poolTokens)",
+    "deposited": "{{symbol}} Deposited",
+    "rates": "Rates",
+    "createPoolSupply": "Create Pool & Supply",
+    "confirmSupply": "Confirm Supply"
+  },
+  "transaction": {
+    "viewOnEtherscan": " ٰView in Etherscan",
+    "waitingForConfitm": "Waiting For Confirmation",
+    "confirmInWallet": "Confirm this transaction in your wallet",
+    "submitted": "Transaction Submitted"
   },
   "swapPage": {
     "addASend": "+ add a send (optional)",

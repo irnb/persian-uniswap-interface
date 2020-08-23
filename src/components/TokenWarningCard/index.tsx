@@ -15,6 +15,7 @@ import { AutoColumn } from '../Column'
 import { AlertTriangle } from 'react-feather'
 import { ButtonError } from '../Button'
 import { useTokenWarningDismissal } from '../../state/user/hooks'
+import { useTranslation } from 'react-i18next'
 
 const Wrapper = styled.div<{ error: boolean }>`
   background: ${({ theme }) => transparentize(0.6, theme.white)};
@@ -42,6 +43,7 @@ interface TokenWarningCardProps extends PropsOfExcluding<typeof Wrapper, 'error'
 }
 
 export default function TokenWarningCard({ token, ...rest }: TokenWarningCardProps) {
+  const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()
   const defaultTokens = useDefaultTokenList()
   const isDefault = isDefaultToken(defaultTokens, token)
@@ -79,7 +81,7 @@ export default function TokenWarningCard({ token, ...rest }: TokenWarningCardPro
               : token.name || token.symbol}
           </TYPE.main>
           <ExternalLink style={{ fontWeight: 400 }} href={getEtherscanLink(chainId, token.address, 'token')}>
-            <TYPE.blue> (View on Etherscan)</TYPE.blue>
+            <TYPE.blue> ({t('transaction.viewOnEtherscan')})</TYPE.blue>
           </ExternalLink>
         </AutoColumn>
       </AutoRow>

@@ -21,6 +21,7 @@ import Identicon from '../Identicon'
 import { ButtonSecondary } from '../Button'
 import { ExternalLink as LinkIcon } from 'react-feather'
 import { ExternalLink, LinkStyledButton, TYPE } from '../../theme'
+import { useTranslation } from 'react-i18next'
 
 const HeaderRow = styled.div`
   ${({ theme }) => theme.flexRowNoWrap};
@@ -225,6 +226,7 @@ export default function AccountDetails({
   ENSName,
   openOptions
 }: AccountDetailsProps) {
+  const { t } = useTranslation()
   const { chainId, account, connector } = useActiveWeb3React()
   const theme = useContext(ThemeContext)
   const dispatch = useDispatch<AppDispatch>()
@@ -358,7 +360,7 @@ export default function AccountDetails({
                           href={getEtherscanLink(chainId, ENSName, 'address')}
                         >
                           <LinkIcon size={16} />
-                          <span style={{ marginLeft: '4px' }}>View on Etherscan</span>
+                          <span style={{ marginLeft: '4px' }}>{t('transaction.viewOnEtherscan')}</span>
                         </AddressLink>
                       </div>
                     </AccountControl>
@@ -376,7 +378,7 @@ export default function AccountDetails({
                           href={getEtherscanLink(chainId, account, 'address')}
                         >
                           <LinkIcon size={16} />
-                          <span style={{ marginLeft: '4px' }}>View on Etherscan</span>
+                          <span style={{ marginLeft: '4px' }}>{t('transaction.viewOnEtherscan')}</span>
                         </AddressLink>
                       </div>
                     </AccountControl>

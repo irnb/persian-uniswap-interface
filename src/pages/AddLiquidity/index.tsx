@@ -241,12 +241,14 @@ export default function AddLiquidity({
         </RowFlat>
         <Row>
           <Text fontSize="24px">
-            {currencies[Field.CURRENCY_A]?.symbol + '/' + currencies[Field.CURRENCY_B]?.symbol + ' Pool Tokens'}
+            {t('liquidity.poolTokens', {
+              symbolA: currencies[Field.CURRENCY_A]?.symbol,
+              symbolB: currencies[Field.CURRENCY_B]?.symbol
+            })}
           </Text>
         </Row>
-        <TYPE.italic fontSize={12} textAlign="left" padding={'8px 0 0 0 '}>
-          {`Output is estimated. If the price changes by more than ${allowedSlippage /
-            100}% your transaction will revert.`}
+        <TYPE.italic fontSize={12} textAlign="start" padding={'8px 0 0 0 '} dir="rtl">
+          {t('liquidity.confirmSupplyWarning', { percent: allowedSlippage / 100 })}
         </TYPE.italic>
       </AutoColumn>
     )

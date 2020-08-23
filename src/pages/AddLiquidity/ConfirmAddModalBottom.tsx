@@ -27,21 +27,21 @@ export function ConfirmAddModalBottom({
   return (
     <>
       <RowBetween>
-        <TYPE.body>{currencies[Field.CURRENCY_A]?.symbol} Deposited</TYPE.body>
+        <TYPE.body>{t('liquidity.deposited', { symbol: currencies[Field.CURRENCY_A]?.symbol })}</TYPE.body>
         <RowFixed>
           <CurrencyLogo currency={currencies[Field.CURRENCY_A]} style={{ marginRight: '8px' }} />
           <TYPE.body>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</TYPE.body>
         </RowFixed>
       </RowBetween>
       <RowBetween>
-        <TYPE.body>{currencies[Field.CURRENCY_B]?.symbol} Deposited</TYPE.body>
+        <TYPE.body>{t('liquidity.deposited', { symbol: currencies[Field.CURRENCY_B]?.symbol })}</TYPE.body>
         <RowFixed>
           <CurrencyLogo currency={currencies[Field.CURRENCY_B]} style={{ marginRight: '8px' }} />
           <TYPE.body>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</TYPE.body>
         </RowFixed>
       </RowBetween>
       <RowBetween>
-        <TYPE.body>Rates</TYPE.body>
+        <TYPE.body>{t('liquidity.rates')}</TYPE.body>
         <TYPE.body>
           {`1 ${currencies[Field.CURRENCY_A]?.symbol} = ${price?.toSignificant(4)} ${
             currencies[Field.CURRENCY_B]?.symbol
@@ -61,7 +61,7 @@ export function ConfirmAddModalBottom({
       </RowBetween>
       <ButtonPrimary style={{ margin: '20px 0 0 0' }} onClick={onAdd}>
         <Text fontWeight={500} fontSize={20}>
-          {noLiquidity ? 'Create Pool & Supply' : 'Confirm Supply'}
+          {noLiquidity ? t('liquidity.createPoolSupply') : t('liquidity.confirmSupply')}
         </Text>
       </ButtonPrimary>
     </>
