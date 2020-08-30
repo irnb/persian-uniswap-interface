@@ -1,5 +1,5 @@
 {
-  "wallet": "ولت",
+  "wallet": "کیف پول ",
   "noWallet": "ولت اتریوم پیدا نشد!",
   "wrongNetwork": "شما در شبکه اشتباهی هستید",
   "switchNetwork": "لطفا شبکه خود را به {{ correctNetwork }} تغییر دهید.",
