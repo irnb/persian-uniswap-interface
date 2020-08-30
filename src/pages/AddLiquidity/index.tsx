@@ -411,9 +411,9 @@ export default function AddLiquidity({
                           width={approvalB !== ApprovalState.APPROVED ? '48%' : '100%'}
                         >
                           {approvalA === ApprovalState.PENDING ? (
-                            <Dots>{t('liquidity.approving', { token: currencies[Field.CURRENCY_A]?.symbol })}</Dots>
+                            <Dots>{t('approving', { token: currencies[Field.CURRENCY_A]?.symbol })}</Dots>
                           ) : (
-                            t('liquidity.approve', { token: currencies[Field.CURRENCY_A]?.symbol })
+                            t('approveToken', { token: currencies[Field.CURRENCY_A]?.symbol })
                           )}
                         </ButtonPrimary>
                       )}
@@ -424,9 +424,9 @@ export default function AddLiquidity({
                           width={approvalA !== ApprovalState.APPROVED ? '48%' : '100%'}
                         >
                           {approvalB === ApprovalState.PENDING ? (
-                            <Dots>{t('liquidity.approving', { token: currencies[Field.CURRENCY_B]?.symbol })}</Dots>
+                            <Dots>{t('approving', { token: currencies[Field.CURRENCY_B]?.symbol })}</Dots>
                           ) : (
-                            t('liquidity.approve', { token: currencies[Field.CURRENCY_B]?.symbol })
+                            t('approveToken', { token: currencies[Field.CURRENCY_B]?.symbol })
                           )}
                         </ButtonPrimary>
                       )}
@@ -440,7 +440,7 @@ export default function AddLiquidity({
                   error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
                 >
                   <Text fontSize={20} fontWeight={500}>
-                    {error ?? t('liquidity.supply')}
+                    {error ?? t('supply')}
                   </Text>
                 </ButtonError>
               </AutoColumn>

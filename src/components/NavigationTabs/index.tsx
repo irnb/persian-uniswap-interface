@@ -67,14 +67,15 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
 }
 
 export function FindPoolTabs() {
+  const { t } = useTranslation()
   return (
     <Tabs>
-      <RowBetween style={{ padding: '1rem' }}>
+      <RowBetween style={{ padding: '1rem' }} dir="ltr">
         <HistoryLink to="/pool">
           <StyledArrowLeft />
         </HistoryLink>
-        <ActiveText>Import Pool</ActiveText>
-        <QuestionHelper text={"Use this tool to find pairs that don't automatically appear in the interface."} />
+        <ActiveText>{t('findPage.title')}</ActiveText>
+        <QuestionHelper text={t('findPage.titleTooltip')} />
       </RowBetween>
     </Tabs>
   )
@@ -88,7 +89,7 @@ export function AddRemoveTabs({ adding }: { adding: boolean }) {
         <HistoryLink to="/pool">
           <StyledArrowLeft />
         </HistoryLink>
-        <ActiveText>{adding ? t('liquidity.add') : t('liquidity.add')}</ActiveText>
+        <ActiveText>{adding ? t('liquidity.add') : t('liquidity.remove')}</ActiveText>
         <QuestionHelper text={adding ? t('liquidity.addTooltip') : t('liquidity.removeTooltip')} />
       </RowBetween>
     </Tabs>

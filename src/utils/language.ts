@@ -7,7 +7,7 @@ export type CssDir = 'rtl' | 'ltr'
 export function getLanguageDirection(): CssDir {
   return i18next.language in RtlLanguages ? 'rtl' : 'ltr'
 }
-export function setLanguageDirection(dir?: CssDir): CssDir {
+export function setLanguageDirection(dir?: CssDir | string): CssDir {
   if (dir === 'rtl') return 'rtl'
   if (dir === 'ltr') return 'ltr'
   return getLanguageDirection()

@@ -103,9 +103,18 @@
   "close": "Close",
   "dismiss": "Dismiss",
   "error": "Error",
+  "approveToken": "Approve {{token}}",
+  "approving": "Approving {{token}}",
+  "supply": "Supply",
+  "add": "Add",
+  "remove": "Remove",
+  "confirm": "Confirm",
   "liquidity": {
     "add": "Add Liquidity",
     "remove": "Remove Liquidity",
+    "detailed": "Detailed",
+    "amount": "Amount",
+    "simple": "Simple",
     "noLiquidity": "No liquidity.",
     "yourPosition": "Your Position",
     "prices": "Price",
@@ -126,13 +135,25 @@
     "deposited": "{{symbol}} Deposited",
     "rates": "Rates",
     "createPoolSupply": "Create Pool & Supply",
-    "confirmSupply": "Confirm Supply"
+    "confirmSupply": "Confirm Supply",
+    "pooledToken": "Pooled {{symbol}}:",
+    "yourPoolTokens": "Your pool tokens:",
+    "yourPoolShares": "Your pool share:",
+    "viewPoolInformation": "View pool information ↗",
+    "receiveWETH": "Receive WETH",
+    "receiveETH": "Receive ETH"
   },
   "transaction": {
     "viewOnEtherscan": " ٰView in Etherscan",
     "waitingForConfitm": "Waiting For Confirmation",
     "confirmInWallet": "Confirm this transaction in your wallet",
     "submitted": "Transaction Submitted"
+  },
+  "findPage": {
+    "title": "Import Pool",
+    "titleTooltip": "Use this tool to find pairs that don't automatically appear in the interface.",
+    "connectWalletGuide": "Connect to a wallet to find pools",
+    "selectTokenGuilde": "Select a token to find your liquidity"
   },
   "swapPage": {
     "addASend": "+ add a send (optional)",
@@ -144,9 +165,8 @@
     "priceImpactHigh": "Price Impact High",
     "insufficientLiquidity": "Insufficient liquidity for this trade.",
     "removeSend": "- Remove Send",
-    "approve": "Approve {{token}}",
-    "approving": "Approving {{token}}",
-    "supply": "Supply"
+    "commonBases": "Common bases",
+    "commonBasesTooltop": "These tokens are commonly paired with other tokens."
   },
   "poolPage": {
     "yourLiquidity": "Your Liquidity",

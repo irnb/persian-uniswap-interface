@@ -177,7 +177,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
             <FixedHeightRow>
               <RowFixed>
                 <Text fontSize={16} fontWeight={500}>
-                  Pooled {currency0.symbol}:
+                  {t('liquidity.pooledToken', { symbol: currency0.symbol })}
                 </Text>
               </RowFixed>
               {token0Deposited ? (
@@ -195,7 +195,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
             <FixedHeightRow>
               <RowFixed>
                 <Text fontSize={16} fontWeight={500}>
-                  Pooled {currency1.symbol}:
+                  {t('liquidity.pooledToken', { symbol: currency1.symbol })}
                 </Text>
               </RowFixed>
               {token1Deposited ? (
@@ -211,7 +211,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
             </FixedHeightRow>
             <FixedHeightRow>
               <Text fontSize={16} fontWeight={500}>
-                Your pool tokens:
+                {t('liquidity.yourPoolTokens')}
               </Text>
               <Text fontSize={16} fontWeight={500}>
                 {userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}
@@ -219,7 +219,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
             </FixedHeightRow>
             <FixedHeightRow>
               <Text fontSize={16} fontWeight={500}>
-                Your pool share:
+                {t('liquidity.yourPoolShares')}
               </Text>
               <Text fontSize={16} fontWeight={500}>
                 {poolTokenPercentage ? poolTokenPercentage.toFixed(2) + '%' : '-'}
@@ -228,7 +228,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
 
             <AutoRow justify="center" marginTop={'10px'}>
               <ExternalLink href={`https://uniswap.info/pair/${pair.liquidityToken.address}`}>
-                View pool information ↗
+                {t('liquidity.viewPoolInformation')}
               </ExternalLink>
             </AutoRow>
             <RowBetween marginTop="10px">

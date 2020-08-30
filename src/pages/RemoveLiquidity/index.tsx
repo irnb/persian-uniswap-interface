@@ -362,7 +362,7 @@ export default function RemoveLiquidity({
           </RowFixed>
         </RowBetween>
 
-        <TYPE.italic fontSize={12} color={theme.text2} textAlign="left" padding={'12px 0 0 0'}>
+        <TYPE.italic fontSize={12} color={theme.text2} textAlign="start" padding={'12px 0 0 0'} dir="rtl">
           {t('liquidity.confirmSupplyWarning', { percent: allowedSlippage / 100 })}
         </TYPE.italic>
       </AutoColumn>
@@ -387,15 +387,15 @@ export default function RemoveLiquidity({
           <>
             <RowBetween>
               <Text color={theme.text2} fontWeight={500} fontSize={16}>
-                Price
+                {t('price')}:
               </Text>
-              <Text fontWeight={500} fontSize={16} color={theme.text1}>
+              <Text fontWeight={500} fontSize={16} color={theme.text1} style={{ direction: 'initial' }}>
                 1 {currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol}
               </Text>
             </RowBetween>
             <RowBetween>
               <div />
-              <Text fontWeight={500} fontSize={16} color={theme.text1}>
+              <Text fontWeight={500} fontSize={16} color={theme.text1} style={{ direction: 'initial' }}>
                 1 {currencyB?.symbol} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {currencyA?.symbol}
               </Text>
             </RowBetween>
@@ -403,7 +403,7 @@ export default function RemoveLiquidity({
         )}
         <ButtonPrimary disabled={!(approval === ApprovalState.APPROVED || signatureData !== null)} onClick={onRemove}>
           <Text fontWeight={500} fontSize={20}>
-            Confirm
+            {t('confirm')}
           </Text>
         </ButtonPrimary>
       </>
@@ -471,7 +471,7 @@ export default function RemoveLiquidity({
             hash={txHash ? txHash : ''}
             content={() => (
               <ConfirmationModalContent
-                title={'You will receive'}
+                title={t('youWillReceive')}
                 onDismiss={handleDismissConfirmation}
                 topContent={modalHeader}
                 bottomContent={modalBottom}
@@ -483,14 +483,14 @@ export default function RemoveLiquidity({
             <LightCard>
               <AutoColumn gap="20px">
                 <RowBetween>
-                  <Text fontWeight={500}>Amount</Text>
+                  <Text fontWeight={500}> {t('liquidity.amount')}</Text>
                   <ClickableText
                     fontWeight={500}
                     onClick={() => {
                       setShowDetailed(!showDetailed)
                     }}
                   >
-                    {showDetailed ? 'Simple' : 'Detailed'}
+                    {showDetailed ? t('liquidity.simple') : t('liquidity.detailed')}
                   </ClickableText>
                 </RowBetween>
                 <Row style={{ alignItems: 'flex-end' }}>
@@ -559,7 +559,7 @@ export default function RemoveLiquidity({
                               currencyB === ETHER ? WETH[chainId].address : currencyIdB
                             }`}
                           >
-                            Receive WETH
+                            {t('liquidity.receiveWETH')}
                           </StyledInternalLink>
                         ) : oneCurrencyIsWETH ? (
                           <StyledInternalLink
@@ -567,7 +567,7 @@ export default function RemoveLiquidity({
                               currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'ETH' : currencyIdA
                             }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'ETH' : currencyIdB}`}
                           >
-                            Receive ETH
+                            {t('liquidity.receiveETH')}
                           </StyledInternalLink>
                         ) : null}
                       </RowBetween>
@@ -624,14 +624,14 @@ export default function RemoveLiquidity({
             {pair && (
               <div style={{ padding: '10px 20px' }}>
                 <RowBetween>
-                  Price:
-                  <div>
+                  {t('price')}:
+                  <div style={{ direction: 'initial' }}>
                     1 {currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol}
                   </div>
                 </RowBetween>
                 <RowBetween>
                   <div />
-                  <div>
+                  <div style={{ direction: 'initial' }}>
                     1 {currencyB?.symbol} ={' '}
                     {tokenB
                       ? pair
@@ -648,7 +648,7 @@ export default function RemoveLiquidity({
               {!account ? (
                 <ButtonLight onClick={toggleWalletModal}>{t('connectWallet')}</ButtonLight>
               ) : (
-                <RowBetween>
+                <RowBetween dir="ltr">
                   <ButtonConfirmed
                     onClick={onAttemptToApprove}
                     confirmed={approval === ApprovalState.APPROVED || signatureData !== null}
@@ -658,11 +658,11 @@ export default function RemoveLiquidity({
                     fontSize={16}
                   >
                     {approval === ApprovalState.PENDING ? (
-                      <Dots>Approving</Dots>
+                      <Dots>{t('approving')}</Dots>
                     ) : approval === ApprovalState.APPROVED || signatureData !== null ? (
-                      'Approved'
+                      t('approved')
                     ) : (
-                      'Approve'
+                      t('approve')
                     )}
                   </ButtonConfirmed>
                   <ButtonError
@@ -673,7 +673,7 @@ export default function RemoveLiquidity({
                     error={!isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]}
                   >
                     <Text fontSize={16} fontWeight={500}>
-                      {error || 'Remove'}
+                      {error || t('remove')}
                     </Text>
                   </ButtonError>
                 </RowBetween>
