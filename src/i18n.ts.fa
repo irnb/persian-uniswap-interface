@@ -9,15 +9,14 @@ i18next
   .use(initReactI18next)
   .init({
     backend: {
-      loadPath: `./locales/en.json`
+      loadPath: `./locales/fa.json`
     },
     react: {
       useSuspense: true
     },
-    // keySeparator: false,
     interpolation: { escapeValue: false },
     fallbackLng: 'fa',
-    lng: 'en',
+    lng: 'fa',
     preload: ['fa', 'en'],
     defaultNS: 'fa'
   })
