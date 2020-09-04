@@ -19,7 +19,7 @@ import { ButtonError } from '../Button'
 import { useSettingsMenuOpen, useToggleSettingsMenu } from '../../state/application/hooks'
 import { Text } from 'rebass'
 import Modal from '../Modal'
-import { setLanguageDirection, CssDir } from '../../utils/language'
+import { setLanguageDirection } from '../../utils/language'
 import { useTranslation } from 'react-i18next'
 
 const StyledMenuIcon = styled(Settings)`
@@ -85,7 +85,7 @@ const StyledMenu = styled.div`
   text-align: left;
 `
 
-const MenuFlyout = styled.span<{ dir?: CssDir }>`
+const MenuFlyout = styled.span<{ dir?: string }>`
   direction: ${({ dir }) => setLanguageDirection(dir)};
   min-width: 20.125rem;
   background-color: ${({ theme }) => theme.bg1};

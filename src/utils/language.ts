@@ -2,12 +2,15 @@ import i18next from 'i18next'
 export enum RtlLanguages {
   fa = 'fa'
 }
-export type CssDir = 'rtl' | 'ltr'
 
-export function getLanguageDirection(): CssDir {
+export function getLanguageDirection(): string {
   return i18next.language in RtlLanguages ? 'rtl' : 'ltr'
 }
-export function setLanguageDirection(dir?: CssDir | string): CssDir {
+export function getCurrentLanguage(): string {
+  if (i18next && i18next?.languages) return i18next?.languages[0]
+  return 'en'
+}
+export function setLanguageDirection(dir?: string): string {
   if (dir === 'rtl') return 'rtl'
   if (dir === 'ltr') return 'ltr'
   return getLanguageDirection()

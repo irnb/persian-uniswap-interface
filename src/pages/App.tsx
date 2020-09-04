@@ -21,7 +21,7 @@ import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
-import { setLanguageDirection, CssDir } from '../utils/language'
+import { setLanguageDirection } from '../utils/language'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
 `
 
-const BodyWrapper = styled.div<{ dir?: CssDir }>`
+const BodyWrapper = styled.div<{ dir?: string }>`
   direction: ${({ dir }) => setLanguageDirection(dir)};
   display: flex;
   flex-direction: column;

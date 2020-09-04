@@ -5,6 +5,7 @@
   "switchNetwork": "Please switch to {{ correctNetwork }}",
   "installWeb3MobileBrowser": "Please visit us from a web3-enabled mobile browser such as Trust Wallet or Coinbase Wallet.",
   "installMetamask": "Please visit us after installing Metamask on Chrome or Brave.",
+  "disconnect": "Disconnect",
   "disconnected": "Disconnected",
   "swap": "Swap",
   "swapAnyway": "Swap Anyway",
@@ -109,6 +110,13 @@
   "add": "Add",
   "remove": "Remove",
   "confirm": "Confirm",
+  "openSpecification": "open specification",
+  "checkOut": "Check out",
+  "toLearnMore": "to learn more",
+  "selected": "Selected",
+  "select": "Select",
+  "change": "Change",
+  "account": "Account",
   "liquidity": {
     "add": "Add Liquidity",
     "remove": "Remove Liquidity",
@@ -197,6 +205,21 @@
     "enterValidPercent": "Enter a valid slippage percentage",
     "transactionFailWarning": "Your transaction may fail",
     "transactionFrontrunWarning": "Your transaction may be frontrun"
+  },
+  "tokenList": {
+    "guide": "Uniswap now supports token lists. You can add your own custom lists via IPFS, HTTPS and ENS",
+    "chooseList": "Choose a list",
+    "footerSection1": "Token lists are an ",
+    "footerSection2": "",
+    "browseList": "Browse lists",
+    "removeConfirm": "Please confirm you would like to remove this list by typing REMOVE",
+    "removeList": "Remove list",
+    "updateList": "Update list",
+    "viewList": "View list",
+    "manageLists": "Manage Lists",
+    "addList": "Add a list",
+    "addListTooltip": "Token lists are an open specification for lists of ERC20 tokens. You can use any token list by entering its URL below. Beware that third party token lists can contain fake or malicious ERC20 tokens.",
+    "selectList": "Select a list"
   },
   "menu": {
     "about": "About",

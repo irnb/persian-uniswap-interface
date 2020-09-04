@@ -297,7 +297,7 @@ export default function AccountDetails({
         <CloseIcon onClick={toggleWalletModal}>
           <CloseColor />
         </CloseIcon>
-        <HeaderRow>Account</HeaderRow>
+        <HeaderRow>{t('account')}</HeaderRow>
         <AccountSection>
           <YourAccount>
             <InfoCard>
@@ -311,7 +311,7 @@ export default function AccountDetails({
                         ;(connector as any).close()
                       }}
                     >
-                      Disconnect
+                      {t('disconnect')}
                     </WalletAction>
                   )}
                   <WalletAction
@@ -320,7 +320,7 @@ export default function AccountDetails({
                       openOptions()
                     }}
                   >
-                    Change
+                    {t('change')}
                   </WalletAction>
                 </div>
               </AccountGroupingRow>

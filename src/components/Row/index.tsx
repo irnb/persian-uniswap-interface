@@ -1,13 +1,13 @@
 import styled from 'styled-components/macro'
 import { Box } from 'rebass/styled-components'
-import { setLanguageDirection, CssDir } from '../../utils/language'
+import { setLanguageDirection } from '../../utils/language'
 
 const Row = styled(Box)<{
   align?: string
   padding?: string
   border?: string
   borderRadius?: string
-  dir?: CssDir
+  dir?: string
 }>`
   width: 100%;
   direction: ${({ dir }) => setLanguageDirection(dir)};

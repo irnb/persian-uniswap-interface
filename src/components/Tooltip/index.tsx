@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components/macro'
 import Popover, { PopoverProps } from '../Popover'
-import { setLanguageDirection, CssDir } from '../../utils/language'
+import { setLanguageDirection } from '../../utils/language'
 
-const TooltipContainer = styled.div<{ dir?: CssDir }>`
+const TooltipContainer = styled.div<{ dir?: string }>`
   direction: ${() => setLanguageDirection()};
   width: 228px;
   padding: 0.6rem 1rem;

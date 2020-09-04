@@ -9,9 +9,12 @@ import { useDarkModeManager } from '../../state/user/hooks'
 
 import listLight from '../../assets/images/token-list/lists-light.png'
 import listDark from '../../assets/images/token-list/lists-dark.png'
+import { useTranslation } from 'react-i18next'
+import { setLanguageDirection, getCurrentLanguage } from '../../utils/language'
 
 export default function ListIntroduction({ onSelectList }: { onSelectList: () => void }) {
   const [isDark] = useDarkModeManager()
+  const { t } = useTranslation()
 
   return (
     <Column style={{ width: '100%', flex: '1 1' }}>
@@ -27,19 +30,32 @@ export default function ListIntroduction({ onSelectList }: { onSelectList: () =>
             src="https://cloudflare-ipfs.com/ipfs/QmRf1rAJcZjV3pwKTHfPdJh4RxR8yvRHkdLjZCsmp7T6hA"
             alt="token-list-preview"
           />
-          <Text style={{ marginBottom: '8px', textAlign: 'center' }}>
-            Uniswap now supports token lists. You can add your own custom lists via IPFS, HTTPS and ENS.{' '}
+          <Text style={{ marginBottom: '8px', textAlign: 'center' }} dir={setLanguageDirection()}>
+            {t('tokenList.guide')}
           </Text>
           <ButtonPrimary onClick={onSelectList} id="list-introduction-choose-a-list">
-            Choose a list
+            {t('tokenList.chooseList')}
           </ButtonPrimary>
-          <OutlineCard style={{ marginBottom: '8px', padding: '1rem' }}>
-            <Text fontWeight={400} fontSize={14} style={{ textAlign: 'center' }}>
-              Token lists are an{' '}
-              <ExternalLink href="https://github.com/uniswap/token-lists">open specification</ExternalLink>. Check out{' '}
-              <ExternalLink href="https://tokenlists.org">tokenlists.org</ExternalLink> to learn more.
-            </Text>
-          </OutlineCard>
+          {getCurrentLanguage() === 'fa' ? (
+            <OutlineCard style={{ marginBottom: '8px', padding: '1rem' }}>
+              <Text fontWeight={400} fontSize={14} style={{ textAlign: 'center' }} dir={setLanguageDirection()}>
+                {t('tokenList.footerSection1')}
+                <ExternalLink href="https://github.com/uniswap/token-lists"> {t('openSpecification')}</ExternalLink>
+                {t('tokenList.footerSection2')}
+                {t('toLearnMore')}
+                <ExternalLink href="https://tokenlists.org">tokenlists.org</ExternalLink> {t('checkOut')} {'.'}
+              </Text>
+            </OutlineCard>
+          ) : (
+            <OutlineCard style={{ marginBottom: '8px', padding: '1rem' }}>
+              <Text fontWeight={400} fontSize={14} style={{ textAlign: 'center' }} dir={setLanguageDirection()}>
+                {t('tokenList.footerSection1')}
+                <ExternalLink href="https://github.com/uniswap/token-lists"> {t('openSpecification')}</ExternalLink>.
+                {t('checkOut')}
+                <ExternalLink href="https://tokenlists.org"> tokenlists.org </ExternalLink> {t('toLearnMore')} {'.'}
+              </Text>
+            </OutlineCard>
+          )}
         </AutoColumn>
       </PaddedColumn>
     </Column>
