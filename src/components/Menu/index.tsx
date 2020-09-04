@@ -7,7 +7,7 @@ import useToggle from '../../hooks/useToggle'
 
 import { ExternalLink } from '../../theme'
 import { useTranslation } from 'react-i18next'
-import { setLanguageDirection, setMarginStart, setMarginEnd } from '../../utils/language'
+import { setLanguageDirection, setMarginEnd } from '../../utils/language'
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
