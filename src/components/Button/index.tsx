@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { darken, lighten, directionalProperty } from 'polished'
-
+import { darken, lighten } from 'polished'
 import { RowBetween } from '../Row'
 import { ChevronDown } from 'react-feather'
 import { Button as RebassButton, ButtonProps } from 'rebass/styled-components'
-import { setLanguageDirection, CssDir } from '../../utils/language'
 
 const Base = styled(RebassButton)<{
   padding?: string
