@@ -1,5 +1,5 @@
 import React from 'react'
-import { Currency, Price } from '@uniswap/sdk'
+import { Price } from '@uniswap/sdk'
 import { useContext } from 'react'
 import { Repeat } from 'react-feather'
 import { Text } from 'rebass'
@@ -9,27 +9,19 @@ import { useTranslation } from 'react-i18next'
 
 interface TradePriceProps {
   price?: Price
-  inputCurrency?: Currency
-  outputCurrency?: Currency
   showInverted: boolean
   setShowInverted: (showInverted: boolean) => void
 }
 
-export default function TradePrice({
-  price,
-  inputCurrency,
-  outputCurrency,
-  showInverted,
-  setShowInverted
-}: TradePriceProps) {
+export default function TradePrice({ price, showInverted, setShowInverted }: TradePriceProps) {
   const theme = useContext(ThemeContext)
   const { t } = useTranslation()
   const formattedPrice = showInverted ? price?.toSignificant(6) : price?.invert()?.toSignificant(6)
 
-  const show = Boolean(inputCurrency && outputCurrency)
+  const show = Boolean(price?.baseCurrency && price?.quoteCurrency)
   const label = showInverted
-    ? `${outputCurrency?.symbol} ${t('per')} ${inputCurrency?.symbol}`
-    : `${inputCurrency?.symbol} ${t('per')} ${outputCurrency?.symbol}`
+    ? `${price?.quoteCurrency?.symbol}  ${t('per')} ${price?.baseCurrency?.symbol}`
+    : `${price?.baseCurrency?.symbol}  ${t('per')} ${price?.quoteCurrency?.symbol}`
 
   return (
     <Text

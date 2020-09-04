@@ -3,7 +3,7 @@ import { Version } from '../../hooks/useToggledVersion'
 import { parseUnits } from '@ethersproject/units'
 import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount, Trade } from '@uniswap/sdk'
 import { ParsedQs } from 'qs'
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useV1Trade } from '../../data/V1'
 import { useActiveWeb3React } from '../../hooks'
@@ -72,7 +72,7 @@ export function useSwapActionHandlers(): {
 // try to parse a user entered amount for a given token
 export function tryParseAmount(value?: string, currency?: Currency): CurrencyAmount | undefined {
   if (!value || !currency) {
-    return
+    return undefined
   }
   try {
     const typedValueParsed = parseUnits(value, currency.decimals).toString()
@@ -86,7 +86,25 @@ export function tryParseAmount(value?: string, currency?: Currency): CurrencyAmo
     console.debug(`Failed to parse input amount: "${value}"`, error)
   }
   // necessary for all paths to return a value
-  return
+  return undefined
+}
+
+const BAD_RECIPIENT_ADDRESSES: string[] = [
+  '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f', // v2 factory
+  '0xf164fC0Ec4E93095b804a4795bBe1e041497b92a', // v2 router 01
+  '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D' // v2 router 02
+]
+
+/**
+ * Returns true if any of the pairs or tokens in a trade have the given checksummed address
+ * @param trade to check for the given address
+ * @param checksummedAddress address to check in the pairs and tokens
+ */
+function involvesAddress(trade: Trade, checksummedAddress: string): boolean {
+  return (
+    trade.route.path.some(token => token.address === checksummedAddress) ||
+    trade.route.pairs.some(pair => pair.liquidityToken.address === checksummedAddress)
+  )
 }
 
 // from the current swap inputs, compute the best trade and return it.
@@ -155,8 +173,17 @@ export function useDerivedSwapInfo(): {
     inputError = inputError ?? t('selectToken')
   }
 
-  if (!to) {
+  const formattedTo = isAddress(to)
+  if (!to || !formattedTo) {
     inputError = inputError ?? 'Enter a recipient'
+  } else {
+    if (
+      BAD_RECIPIENT_ADDRESSES.indexOf(formattedTo) !== -1 ||
+      (bestTradeExactIn && involvesAddress(bestTradeExactIn, formattedTo)) ||
+      (bestTradeExactOut && involvesAddress(bestTradeExactOut, formattedTo))
+    ) {
+      inputError = inputError ?? 'Invalid recipient'
+    }
   }
 
   const [allowedSlippage] = useUserSlippageTolerance()
@@ -248,10 +275,15 @@ export function queryParametersToSwapState(parsedQs: ParsedQs): SwapState {
 }
 
 // updates the swap state to use the defaults for a given network
-export function useDefaultsFromURLSearch() {
+export function useDefaultsFromURLSearch():
+  | { inputCurrencyId: string | undefined; outputCurrencyId: string | undefined }
+  | undefined {
   const { chainId } = useActiveWeb3React()
   const dispatch = useDispatch<AppDispatch>()
   const parsedQs = useParsedQueryString()
+  const [result, setResult] = useState<
+    { inputCurrencyId: string | undefined; outputCurrencyId: string | undefined } | undefined
+  >()
 
   useEffect(() => {
     if (!chainId) return
@@ -266,6 +298,10 @@ export function useDefaultsFromURLSearch() {
         recipient: parsed.recipient
       })
     )
+
+    setResult({ inputCurrencyId: parsed[Field.INPUT].currencyId, outputCurrencyId: parsed[Field.OUTPUT].currencyId })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, chainId])
+
+  return result
 }
