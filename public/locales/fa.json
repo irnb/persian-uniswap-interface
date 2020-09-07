@@ -201,7 +201,10 @@
     "confirmExpertWarning": "برای فعال کردن استفاده حرفه ای، لطفا واژه انگلیسی 'confirm' را تایپ و تایید کنید.",
     "enterValidPercent": "لطفا یک درصد معتبر را وارد کنید.",
     "transactionFailWarning": "تراکنش شما ممکن است ناموفق گردد.",
-    "transactionFrontrunWarning": "تراکنش شما ممکن است دچار فرانت رانینگ گردد."
+    "transactionFrontrunWarning": "تراکنش شما ممکن است دچار فرانت رانینگ گردد.",
+    "language": "زبان (Language)",
+    "persian": "فارسی",
+    "english": "English"
   },
   "tokenList": {
     "guide": "یونی‌سواپ حالا از «لیست توکن‌ها» پشتیبانی می‌کند. شما هم می‌توانید لیست شخصی خود را از طریق IPFS یا HTTPS و ENS به این بخش اضافه کنید.",

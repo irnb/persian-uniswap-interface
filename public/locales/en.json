@@ -204,7 +204,10 @@
     "confirmExpertWarning": "Please type the word 'confirm' to enable expert mode.",
     "enterValidPercent": "Enter a valid slippage percentage",
     "transactionFailWarning": "Your transaction may fail",
-    "transactionFrontrunWarning": "Your transaction may be frontrun"
+    "transactionFrontrunWarning": "Your transaction may be frontrun",
+    "language": "Language",
+    "persian": "Persian",
+    "english": "English"
   },
   "tokenList": {
     "guide": "Uniswap now supports token lists. You can add your own custom lists via IPFS, HTTPS and ENS",

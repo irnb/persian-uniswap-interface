@@ -9,6 +9,7 @@ import {
   useDarkModeManager
 } from '../../state/user/hooks'
 import TransactionSettings from '../TransactionSettings'
+import LanguageSettings from '../LanguageSettings'
 import { RowFixed, RowBetween } from '../Row'
 import { TYPE } from '../../theme'
 import QuestionHelper from '../QuestionHelper'
@@ -240,6 +241,7 @@ export default function SettingsTab() {
               </RowFixed>
               <Toggle isActive={darkMode} toggle={toggleDarkMode} />
             </RowBetween>
+            <LanguageSettings />
           </AutoColumn>
         </MenuFlyout>
       )}
