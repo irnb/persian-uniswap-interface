@@ -11,7 +11,7 @@ import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
 import { StyledInternalLink, TYPE } from '../../theme'
 import { Text } from 'rebass'
 import { LightCard } from '../../components/Card'
-import { RowBetween } from '../../components/Row'
+import { AutoRow } from '../../components/Row'
 import { ButtonPrimary, ButtonSecondary } from '../../components/Button'
 import { AutoColumn } from '../../components/Column'
 
@@ -70,12 +70,12 @@ export default function Pool() {
           </ButtonPrimary>
 
           <AutoColumn gap="12px" style={{ width: '100%' }}>
-            <RowBetween padding={'0 8px'}>
+            <AutoRow padding={'0 8px'}>
               <Text color={theme.text1} fontWeight={500}>
                 {t('poolPage.yourLiquidity')}
               </Text>
               <Question text={t('poolPage.yourLiquidityTooltip')} />
-            </RowBetween>
+            </AutoRow>
 
             {!account ? (
               <LightCard padding="40px">
