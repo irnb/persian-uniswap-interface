@@ -22,7 +22,7 @@ import SortButton from './SortButton'
 import { useTokenComparator } from './sorting'
 import { PaddedColumn, SearchInput, Separator } from './styleds'
 import AutoSizer from 'react-virtualized-auto-sizer'
-
+import { addMarginToEndOfCSSObject } from '../../utils/language'
 interface CurrencySearchProps {
   isOpen: boolean
   onDismiss: () => void
@@ -192,7 +192,7 @@ export function CurrencySearch({
             <Row>
               {selectedListInfo.current.logoURI ? (
                 <ListLogo
-                  style={{ marginRight: 12 }}
+                  style={addMarginToEndOfCSSObject(12, {})}
                   logoURI={selectedListInfo.current.logoURI}
                   alt={`${selectedListInfo.current.name} list logo`}
                 />

@@ -1,4 +1,5 @@
 import i18next from 'i18next'
+import { CSSObject } from 'styled-components'
 export enum RtlLanguages {
   fa = 'fa'
 }
@@ -15,11 +16,19 @@ export function setLanguageDirection(dir?: string): string {
   if (dir === 'ltr') return 'ltr'
   return getLanguageDirection()
 }
-export function setMarginStart(value?: string): string {
+export function setMarginToStart(value: string): string {
   if (getLanguageDirection() === 'rtl') return `margin-right:${value}`
   return `margin-left:${value}`
 }
-export function setMarginEnd(value?: string): string {
+export function setMarginToEnd(value?: string): string {
   if (getLanguageDirection() === 'rtl') return `margin-left:${value}`
   return `margin-right:${value}`
+}
+export function addMarginToEndOfCSSObject(value: number, otherCss: CSSObject): CSSObject {
+  if (getLanguageDirection() === 'rtl') return { ...otherCss, marginLeft: value }
+  return { ...otherCss, marginRight: value }
+}
+export function addMarginToStartOfCSSObject(value: number, otherCss: CSSObject): CSSObject {
+  if (getLanguageDirection() === 'rtl') return { ...otherCss, marginRight: value }
+  return { ...otherCss, marginLeft: value }
 }

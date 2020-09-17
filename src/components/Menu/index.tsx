@@ -7,7 +7,7 @@ import useToggle from '../../hooks/useToggle'
 
 import { ExternalLink } from '../../theme'
 import { useTranslation } from 'react-i18next'
-import { setLanguageDirection, setMarginEnd } from '../../utils/language'
+import { setLanguageDirection, setMarginToEnd } from '../../utils/language'
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
@@ -79,7 +79,7 @@ const MenuItem = styled(ExternalLink)<{ marginEnd?: string }>`
     text-decoration: none;
   }
   > svg {
-    ${({ marginEnd }) => marginEnd && setMarginEnd('8px')}
+    ${({ marginEnd }) => marginEnd && setMarginToEnd('8px')}
   }
 `
 
