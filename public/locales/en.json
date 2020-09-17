@@ -116,7 +116,6 @@
   "selected": "Selected",
   "select": "Select",
   "change": "Change",
-  "account": "Account",
   "liquidity": {
     "add": "Add Liquidity",
     "remove": "Remove Liquidity",
@@ -240,5 +239,9 @@
     "code": "Code",
     "discord": "Discord",
     "analytics": "Analytics"
+  },
+  "account": {
+    "title": "Account",
+    "copyAddress": "Copy Address"
   }
 }

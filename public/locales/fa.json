@@ -116,7 +116,6 @@
   "selected": "انتخاب شده",
   "select": "انتخاب",
   "change": "تغییر",
-  "account": "حساب کاربری",
   "liquidity": {
     "add": "افزودن نقدینگی",
     "remove": "حذف نقدینگی",
@@ -242,5 +241,9 @@
     "code": "کُد",
     "discord": "دیسکورد",
     "analytics": "تجزیه و تحلیل"
+  },
+  "account": {
+    "title": "حساب کاربری",
+    "copyAddress": "کپی آدرس"
   }
 }

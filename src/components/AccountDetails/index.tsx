@@ -297,7 +297,7 @@ export default function AccountDetails({
         <CloseIcon onClick={toggleWalletModal}>
           <CloseColor />
         </CloseIcon>
-        <HeaderRow>{t('account')}</HeaderRow>
+        <HeaderRow>{t('account.title')}</HeaderRow>
         <AccountSection>
           <YourAccount>
             <InfoCard>
@@ -351,7 +351,7 @@ export default function AccountDetails({
                         {/*  TODO: translate */}
                         {account && (
                           <Copy toCopy={account}>
-                            <span style={{ marginLeft: '4px' }}>Copy Address</span>
+                            <span style={{ marginLeft: '4px' }}>{t('account.copyAddress')}</span>
                           </Copy>
                         )}
                         {chainId && account && (
@@ -373,7 +373,7 @@ export default function AccountDetails({
                       <div>
                         {account && (
                           <Copy toCopy={account}>
-                            <span style={{ marginLeft: '4px' }}>Copy Address</span>
+                            <span style={{ marginLeft: '4px' }}>{t('account.copyAddress')}</span>
                           </Copy>
                         )}
                         {chainId && account && (
