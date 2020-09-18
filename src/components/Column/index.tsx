@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { setLanguageDirection } from '../../utils/language'
 
 const Column = styled.div`
   display: flex;
@@ -13,11 +14,13 @@ export const ColumnCenter = styled(Column)`
 export const AutoColumn = styled.div<{
   gap?: 'sm' | 'md' | 'lg' | string
   justify?: 'stretch' | 'center' | 'start' | 'end' | 'flex-start' | 'flex-end' | 'space-between'
+  dir?: string
 }>`
   display: grid;
   grid-auto-rows: auto;
   grid-row-gap: ${({ gap }) => (gap === 'sm' && '8px') || (gap === 'md' && '12px') || (gap === 'lg' && '24px') || gap};
   justify-items: ${({ justify }) => justify && justify};
+  direction: ${({ dir }) => setLanguageDirection(dir)};
 `
 
 export default Column

@@ -4,11 +4,6 @@
   "wrongNetwork": "You are on the wrong network",
   "switchNetwork": "Please switch to {{ correctNetwork }}",
   "installWeb3MobileBrowser": "Please visit us from a web3-enabled mobile browser such as Trust Wallet or Coinbase Wallet.",
-  "installMetamask": "Please visit us after installing Metamask on Chrome or Brave.",
-  "disconnect": "Disconnect",
-  "disconnected": "Disconnected",
-  "swap": "Swap",
-  "swapAnyway": "Swap Anyway",
   "send": "Send",
   "sendAnyway": "Send Anyway",
   "pool": "Pool",
@@ -28,7 +23,6 @@
   "unknownError": "Oops! An unknown error occurred. Please refresh the page, or visit from another browser or device.",
   "enterValueCont": "Enter a {{ missingCurrencyValue }} value to continue.",
   "selectTokenCont": "Select a token to continue.",
-
   "unlockTokenCont": "Please unlock token to continue.",
   "transactionDetails": "Advanced Details",
   "hideDetails": "Hide Details",
@@ -116,6 +110,8 @@
   "selected": "Selected",
   "select": "Select",
   "change": "Change",
+  "copied": "Copied",
+  "accept": "Accept",
   "liquidity": {
     "add": "Add Liquidity",
     "remove": "Remove Liquidity",
@@ -154,7 +150,8 @@
     "viewOnEtherscan": " ٰView in Etherscan",
     "waitingForConfitm": "Waiting For Confirmation",
     "confirmInWallet": "Confirm this transaction in your wallet",
-    "submitted": "Transaction Submitted"
+    "submitted": "Transaction Submitted",
+    "clearAll": "clear all"
   },
   "findPage": {
     "title": "Import Pool",
@@ -163,6 +160,9 @@
     "selectTokenGuilde": "Select a token to find your liquidity"
   },
   "swapPage": {
+    "title": "Swap",
+    "swapAnyway": "Swap Anyway",
+    "confirmSwap": "Confirm Swap",
     "addASend": "+ add a send (optional)",
     "findTokenHelpTitle": "Having trouble finding a token?",
     "tokenName": "Token name",
@@ -180,7 +180,11 @@
     "priceImpact": "Price Impact",
     "priceImpactTooltip": "The difference between the market price and your price due to trade size.",
     "liquidityProviderFee": "Liquidity Provider Fee",
-    "liquidityProviderFeeTooltip": "A portion of each trade (0.30%) goes to liquidity providers as a protocol incentive."
+    "liquidityProviderFeeTooltip": "A portion of each trade (0.30%) goes to liquidity providers as a protocol incentive.",
+    "swapModalDescBuy": "Output is estimated. You will receive at least",
+    "swapModalDescPart2": " or the transaction will revert.",
+    "outputWillBe": "Output will be sent to",
+    "priceUpdated": "Price Updated"
   },
   "poolPage": {
     "yourLiquidity": "Your Liquidity",
@@ -242,6 +246,11 @@
   },
   "account": {
     "title": "Account",
-    "copyAddress": "Copy Address"
+    "installMetamask": "Please visit us after installing Metamask on Chrome or Brave.",
+    "disconnect": "Disconnect",
+    "disconnected": "Disconnected",
+    "copyAddress": "Copy Address",
+    "showTransactionTitle": "Your transactions will appear here...",
+    "connectedWith": "Connected with {{name}}"
   }
 }

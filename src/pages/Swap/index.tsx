@@ -493,8 +493,8 @@ export default function Swap() {
                     : priceImpactSeverity > 3 && !isExpertMode
                     ? t('swapPage.priceImpactTooHigh')
                     : priceImpactSeverity > 2
-                    ? `${t('swapAnyway')}`
-                    : `${t('swap')}`}
+                    ? `${t('swapPage.swapAnyway')}`
+                    : `${t('swapPage.title')}`}
                 </Text>
               </ButtonError>
             )}

@@ -4,11 +4,6 @@
   "wrongNetwork": "شما در شبکه اشتباهی هستید",
   "switchNetwork": "لطفا شبکه خود را به {{ correctNetwork }} تغییر دهید.",
   "installWeb3MobileBrowser": "لطفا از یک مرورگر موبایل که web3 را پشتیبانی می‌کند، استفاده کنید. برزورهایی مثل Trust Wallet و Coinbase Wallet.",
-  "disconnect": "قطع اتصال",
-  "installMetamask": "لطفا ابتدا کیف پول متاماسک را نصب کنید و بعد با استفاده از مرورگر کروم یا بریو ما را ویزیت کنید.",
-  "disconnected": "اتصال برقرار نمی‌باشد",
-  "swap": "مبادله",
-  "swapAnyway": "به هرحال مبادله کن",
   "send": "ارسال کن",
   "sendAnyway": "به هرحال ارسال کن",
   "pool": "سپرده‌گذاری",
@@ -28,7 +23,6 @@
   "unknownError": "متاسفانه با خطا مواجه شدیم . لطفا صفحه را رفرش کنید یا با یک مرورگر یا دستگاه دیگر امتحان کنید.",
   "enterValueCont": "یک {{ missingCurrencyValue }} را برای ادامه وارد کنید.",
   "selectTokenCont": "یک توکن را برای ادامه انتخاب کنید.",
-
   "unlockTokenCont": "برای ادامه،‌لطفا توکن را بازگشایی کنید.",
   "transactionDetails": "جزئیات تراکنش",
   "hideDetails": "نمایش ندادن جزئیات",
@@ -116,6 +110,8 @@
   "selected": "انتخاب شده",
   "select": "انتخاب",
   "change": "تغییر",
+  "copied": "کپی شد",
+  "accept": "قبول",
   "liquidity": {
     "add": "افزودن نقدینگی",
     "remove": "حذف نقدینگی",
@@ -154,7 +150,8 @@
     "viewOnEtherscan": "Etherscan مشاهده تراکنش در",
     "waitingForConfitm": "در انتظار تایید تراکنش",
     "confirmInWallet": "تایید تراکنش در $t(wallet) شما",
-    "submitted": "تراکنش ثبت شد"
+    "submitted": "تراکنش ثبت شد",
+    "clearAll": "حذف همه"
   },
   "findPage": {
     "title": "افزودن استخر",
@@ -163,6 +160,9 @@
     "selectTokenGuide": "برای پیدا کردن یک استخر، یک توکن را انتخاب کنید."
   },
   "swapPage": {
+    "title": "مبادله",
+    "swapAnyway": "به هرحال مبادله کن",
+    "confirmSwap": "تایید مبادله",
     "addASend": "+ اضافه کردن ارسال ($t(optional))",
     "findTokenHelpTitle": "نمی‌توانید توکن مورد نظر خود را پیدا کنید؟",
     "findTokenHelpTooltip": "با وارد کردن آدرس هر توکنی به بخش جستجو، می‌توانید آن را به این لیست اضافه کنید.",
@@ -183,7 +183,12 @@
     "priceImpact": "فشار قیمت",
     "priceImpactTooltip": "فاصله بین قیمت مارکت و قیمت شما که ناشی از اندازه مبادله است.",
     "liquidityProviderFee": "کارمزد سپرده گذار ",
-    "liquidityProviderFeeTooltip": "بخشی از هر معامله (0.30٪) به عنوان مشوق پروتکل به تأمین کنندگان نقدینگی اختصاص می یابد."
+    "liquidityProviderFeeTooltip": "بخشی از هر معامله (0.30٪) به عنوان مشوق پروتکل به تأمین کنندگان نقدینگی اختصاص می یابد.",
+    "swapModalDescBuy": "خروجی تقریبی است. حداقل این مبلغ را دریافت می‌کنید: ",
+    "swapModalDescSell": "ورودی تقریبی است. حداکثر این مبلغ را می‌پردازید: ",
+    "swapModalDescPart2": " یا تراکنش لغو خواهد شد",
+    "outputWillBe": "خروجی به این آدرس ارسال شد:",
+    "priceUpdated": "قیمت آپدیت شد."
   },
   "poolPage": {
     "yourLiquidity": "نقدینگی شما",
@@ -244,6 +249,11 @@
   },
   "account": {
     "title": "حساب کاربری",
-    "copyAddress": "کپی آدرس"
+    "installMetamask": "لطفا ابتدا کیف پول متاماسک را نصب کنید و بعد با استفاده از مرورگر کروم یا بریو ما را ویزیت کنید.",
+    "disconnect": "قطع اتصال",
+    "disconnected": "اتصال برقرار نمی‌باشد",
+    "copyAddress": "کپی آدرس",
+    "showTransactionTitle": "تراکنش های شما اینجا نمایش داده می‌شود...",
+    "connectedWith": "اتصال با {{name}}"
   }
 }

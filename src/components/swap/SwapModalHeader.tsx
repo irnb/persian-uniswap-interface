@@ -12,6 +12,8 @@ import { AutoColumn } from '../Column'
 import CurrencyLogo from '../CurrencyLogo'
 import { RowBetween, RowFixed } from '../Row'
 import { TruncatedText, SwapShowAcceptChanges } from './styleds'
+import { useTranslation } from 'react-i18next'
+import { addMarginToEndOfCSSObject } from '../../utils/language'
 
 export default function SwapModalHeader({
   trade,
@@ -32,14 +34,14 @@ export default function SwapModalHeader({
   ])
   const { priceImpactWithoutFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
   const priceImpactSeverity = warningSeverity(priceImpactWithoutFee)
-
+  const { t } = useTranslation()
   const theme = useContext(ThemeContext)
 
   return (
     <AutoColumn gap={'md'} style={{ marginTop: '20px' }}>
       <RowBetween align="flex-end">
         <RowFixed gap={'0px'}>
-          <CurrencyLogo currency={trade.inputAmount.currency} size={'24px'} style={{ marginRight: '12px' }} />
+          <CurrencyLogo currency={trade.inputAmount.currency} size={'24px'} style={addMarginToEndOfCSSObject(12, {})} />
           <TruncatedText
             fontSize={24}
             fontWeight={500}
@@ -59,7 +61,11 @@ export default function SwapModalHeader({
       </RowFixed>
       <RowBetween align="flex-end">
         <RowFixed gap={'0px'}>
-          <CurrencyLogo currency={trade.outputAmount.currency} size={'24px'} style={{ marginRight: '12px' }} />
+          <CurrencyLogo
+            currency={trade.outputAmount.currency}
+            size={'24px'}
+            style={addMarginToEndOfCSSObject(12, {})}
+          />
           <TruncatedText
             fontSize={24}
             fontWeight={500}
@@ -84,41 +90,41 @@ export default function SwapModalHeader({
         <SwapShowAcceptChanges justify="flex-start" gap={'0px'}>
           <RowBetween>
             <RowFixed>
-              <AlertTriangle size={20} style={{ marginRight: '8px', minWidth: 24 }} />
-              <TYPE.main color={theme.primary1}> Price Updated</TYPE.main>
+              <AlertTriangle size={20} style={addMarginToEndOfCSSObject(8, { minWidth: 24 })} />
+              <TYPE.main color={theme.primary1}> {t('swapPage.priceUpdated')}</TYPE.main>
             </RowFixed>
             <ButtonPrimary
               style={{ padding: '.5rem', width: 'fit-content', fontSize: '0.825rem', borderRadius: '12px' }}
               onClick={onAcceptChanges}
             >
-              Accept
+              {t('accept')}
             </ButtonPrimary>
           </RowBetween>
         </SwapShowAcceptChanges>
       ) : null}
       <AutoColumn justify="flex-start" gap="sm" style={{ padding: '12px 0 0 0px' }}>
         {trade.tradeType === TradeType.EXACT_INPUT ? (
-          <TYPE.italic textAlign="left" style={{ width: '100%' }}>
-            {`Output is estimated. You will receive at least `}
+          <TYPE.italic textAlign="start" style={{ width: '100%' }}>
+            {t('swapPage.swapModalDescBuy')}
             <b>
               {slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(6)} {trade.outputAmount.currency.symbol}
             </b>
-            {' or the transaction will revert.'}
+            {t('swapPage.swapModalDescPart2')}
           </TYPE.italic>
         ) : (
           <TYPE.italic textAlign="left" style={{ width: '100%' }}>
-            {`Input is estimated. You will sell at most `}
+            {t('swapPage.swapModalDescSell')}
             <b>
               {slippageAdjustedAmounts[Field.INPUT]?.toSignificant(6)} {trade.inputAmount.currency.symbol}
             </b>
-            {' or the transaction will revert.'}
+            {t('swapPage.swapModalDescPart2')}
           </TYPE.italic>
         )}
       </AutoColumn>
       {recipient !== null ? (
         <AutoColumn justify="flex-start" gap="sm" style={{ padding: '12px 0 0 0px' }}>
           <TYPE.main>
-            Output will be sent to{' '}
+            {t('swapPage.outputWillBe')}
             <b title={recipient}>{isAddress(recipient) ? shortenAddress(recipient) : recipient}</b>
           </TYPE.main>
         </AutoColumn>

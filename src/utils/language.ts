@@ -16,6 +16,14 @@ export function setLanguageDirection(dir?: string): string {
   if (dir === 'ltr') return 'ltr'
   return getLanguageDirection()
 }
+export function setAbsoluteDirectionToStart(value: string): string {
+  if (getLanguageDirection() === 'rtl') return `right:${value}`
+  return `left:${value}`
+}
+export function setAbsoluteDirectionToEnd(value: string): string {
+  if (getLanguageDirection() === 'rtl') return `left:${value}`
+  return `right:${value}`
+}
 export function setMarginToStart(value: string): string {
   if (getLanguageDirection() === 'rtl') return `margin-right:${value}`
   return `margin-left:${value}`
@@ -31,4 +39,12 @@ export function addMarginToEndOfCSSObject(value: number, otherCss: CSSObject): C
 export function addMarginToStartOfCSSObject(value: number, otherCss: CSSObject): CSSObject {
   if (getLanguageDirection() === 'rtl') return { ...otherCss, marginRight: value }
   return { ...otherCss, marginLeft: value }
+}
+export function addPaddingToEndOfCSSObject(value: number, otherCss: CSSObject): CSSObject {
+  if (getLanguageDirection() === 'rtl') return { ...otherCss, paddingLeft: value }
+  return { ...otherCss, paddingRight: value }
+}
+export function addPaddingToStartOfCSSObject(value: number, otherCss: CSSObject): CSSObject {
+  if (getLanguageDirection() === 'rtl') return { ...otherCss, paddingRight: value }
+  return { ...otherCss, paddingLeft: value }
 }

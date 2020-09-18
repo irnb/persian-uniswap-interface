@@ -5,7 +5,7 @@ import { useActiveWeb3React } from '../../hooks'
 import { AppDispatch } from '../../state'
 import { clearAllTransactions } from '../../state/transactions/actions'
 import { shortenAddress } from '../../utils'
-import { AutoRow } from '../Row'
+import { AutoRow, RowFixed } from '../Row'
 import Copy from './Copy'
 import Transaction from './Transaction'
 
@@ -22,6 +22,7 @@ import { ButtonSecondary } from '../Button'
 import { ExternalLink as LinkIcon } from 'react-feather'
 import { ExternalLink, LinkStyledButton, TYPE } from '../../theme'
 import { useTranslation } from 'react-i18next'
+import { setLanguageDirection, setAbsoluteDirectionToEnd } from '../../utils/language'
 
 const HeaderRow = styled.div`
   ${({ theme }) => theme.flexRowNoWrap};
@@ -35,7 +36,7 @@ const HeaderRow = styled.div`
 
 const UpperSection = styled.div`
   position: relative;
-
+  direction: ${() => setLanguageDirection()};
   h5 {
     margin: 0;
     margin-bottom: 0.5rem;
@@ -97,6 +98,7 @@ const YourAccount = styled.div`
 const LowerSection = styled.div`
   ${({ theme }) => theme.flexColumnNoWrap}
   padding: 1.5rem;
+  direction: ${() => setLanguageDirection()};
   flex-grow: 1;
   overflow: auto;
   background-color: ${({ theme }) => theme.bg2};
@@ -143,9 +145,10 @@ const AddressLink = styled(ExternalLink)<{ hasENS: boolean; isENS: boolean }>`
   }
 `
 
-const CloseIcon = styled.div`
+const CloseIcon = styled.div<{ absoluteDirection?: string }>`
   position: absolute;
-  right: 1rem;
+  // right: 1rem;
+  ${({ absoluteDirection }) => absoluteDirection && setAbsoluteDirectionToEnd(absoluteDirection)}}
   top: 14px;
   &:hover {
     cursor: pointer;
@@ -240,7 +243,7 @@ export default function AccountDetails({
           SUPPORTED_WALLETS[k].connector === connector && (connector !== injected || isMetaMask === (k === 'METAMASK'))
       )
       .map(k => SUPPORTED_WALLETS[k].name)[0]
-    return <WalletName>Connected with {name}</WalletName>
+    return <WalletName>{t('account.connectedWith', { name: name })}</WalletName>
   }
 
   function getStatusIcon() {
@@ -294,7 +297,7 @@ export default function AccountDetails({
   return (
     <>
       <UpperSection>
-        <CloseIcon onClick={toggleWalletModal}>
+        <CloseIcon onClick={toggleWalletModal} absoluteDirection="1rem">
           <CloseColor />
         </CloseIcon>
         <HeaderRow>{t('account.title')}</HeaderRow>
@@ -311,7 +314,7 @@ export default function AccountDetails({
                         ;(connector as any).close()
                       }}
                     >
-                      {t('disconnect')}
+                      {t('account.disconnect')}
                     </WalletAction>
                   )}
                   <WalletAction
@@ -347,8 +350,7 @@ export default function AccountDetails({
                 {ENSName ? (
                   <>
                     <AccountControl>
-                      <div>
-                        {/*  TODO: translate */}
+                      <RowFixed dir="ltr">
                         {account && (
                           <Copy toCopy={account}>
                             <span style={{ marginLeft: '4px' }}>{t('account.copyAddress')}</span>
@@ -364,13 +366,13 @@ export default function AccountDetails({
                             <span style={{ marginLeft: '4px' }}>{t('transaction.viewOnEtherscan')}</span>
                           </AddressLink>
                         )}
-                      </div>
+                      </RowFixed>
                     </AccountControl>
                   </>
                 ) : (
                   <>
                     <AccountControl>
-                      <div>
+                      <RowFixed dir="ltr">
                         {account && (
                           <Copy toCopy={account}>
                             <span style={{ marginLeft: '4px' }}>{t('account.copyAddress')}</span>
@@ -386,7 +388,7 @@ export default function AccountDetails({
                             <span style={{ marginLeft: '4px' }}>{t('transaction.viewOnEtherscan')}</span>
                           </AddressLink>
                         )}
-                      </div>
+                      </RowFixed>
                     </AccountControl>
                   </>
                 )}
@@ -399,14 +401,16 @@ export default function AccountDetails({
         <LowerSection>
           <AutoRow mb={'1rem'} style={{ justifyContent: 'space-between' }}>
             <TYPE.body>Recent Transactions</TYPE.body>
-            <LinkStyledButton onClick={clearAllTransactionsCallback}>(clear all)</LinkStyledButton>
+            <LinkStyledButton onClick={clearAllTransactionsCallback}>{`(${t(
+              'transaction.clearAll'
+            )})`}</LinkStyledButton>
           </AutoRow>
           {renderTransactions(pendingTransactions)}
           {renderTransactions(confirmedTransactions)}
         </LowerSection>
       ) : (
         <LowerSection>
-          <TYPE.body color={theme.text1}>Your transactions will appear here...</TYPE.body>
+          <TYPE.body color={theme.text1}>{t('account.showTransactionTitle')}</TYPE.body>
         </LowerSection>
       )}
     </>

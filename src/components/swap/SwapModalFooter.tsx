@@ -18,6 +18,7 @@ import { AutoRow, RowBetween, RowFixed } from '../Row'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import { StyledBalanceMaxMini, SwapCallbackError } from './styleds'
 import { useTranslation } from 'react-i18next'
+import { addPaddingToStartOfCSSObject } from '../../utils/language'
 
 export default function SwapModalFooter({
   trade,
@@ -47,19 +48,19 @@ export default function SwapModalFooter({
       <AutoColumn gap="0px">
         <RowBetween align="center">
           <Text fontWeight={400} fontSize={14} color={theme.text2}>
-            Price
+            {t('price')}
           </Text>
           <Text
             fontWeight={500}
             fontSize={14}
             color={theme.text1}
-            style={{
+            style={addPaddingToStartOfCSSObject(10, {
               justifyContent: 'center',
               alignItems: 'center',
               display: 'flex',
               textAlign: 'right',
-              paddingLeft: '10px'
-            }}
+              direction: 'ltr'
+            })}
           >
             {formatExecutionPrice(trade, showInverted)}
             <StyledBalanceMaxMini onClick={() => setShowInverted(!showInverted)}>
@@ -81,7 +82,7 @@ export default function SwapModalFooter({
                 ? slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4) ?? '-'
                 : slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4) ?? '-'}
             </TYPE.black>
-            <TYPE.black fontSize={14} marginLeft={'4px'}>
+            <TYPE.black fontSize={14} style={addPaddingToStartOfCSSObject(4, {})}>
               {trade.tradeType === TradeType.EXACT_INPUT
                 ? trade.outputAmount.currency.symbol
                 : trade.inputAmount.currency.symbol}
@@ -119,7 +120,7 @@ export default function SwapModalFooter({
           id="confirm-swap-or-send"
         >
           <Text fontSize={20} fontWeight={500}>
-            {severity > 2 ? 'Swap Anyway' : 'Confirm Swap'}
+            {severity > 2 ? t('swapPage.swapAnyway') : t('swapPage.confirmSwap')}
           </Text>
         </ButtonError>
 
