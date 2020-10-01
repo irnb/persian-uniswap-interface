@@ -129,6 +129,7 @@ interface CurrencyInputPanelProps {
   otherCurrency?: Currency | null
   id: string
   showCommonBases?: boolean
+  customBalanceText?: string
 }
 
 export default function CurrencyInputPanel({
@@ -145,7 +146,8 @@ export default function CurrencyInputPanel({
   hideInput = false,
   otherCurrency,
   id,
-  showCommonBases
+  showCommonBases,
+  customBalanceText
 }: CurrencyInputPanelProps) {
   const { t } = useTranslation()
   if (label === 'Input') label = t('input')
@@ -176,7 +178,7 @@ export default function CurrencyInputPanel({
                   style={{ display: 'inline', cursor: 'pointer' }}
                 >
                   {!hideBalance && !!currency && selectedCurrencyBalance
-                    ? t('balance', { balanceInput: selectedCurrencyBalance?.toSignificant(6) })
+                    ? t(customBalanceText ?? 'balance', { balanceInput: selectedCurrencyBalance?.toSignificant(6) })
                     : ' -'}
                 </TYPE.body>
               )}

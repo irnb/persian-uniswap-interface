@@ -1,27 +1,27 @@
-import React, { useRef, useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { Settings, X } from 'react-feather'
-import styled from 'styled-components/macro'
-import { useOnClickOutside } from '../../hooks/useOnClickOutside'
-import {
-  useUserSlippageTolerance,
-  useExpertModeManager,
-  useUserDeadline,
-  useDarkModeManager
-} from '../../state/user/hooks'
-import TransactionSettings from '../TransactionSettings'
-import LanguageSettings from '../LanguageSettings'
-import { RowFixed, RowBetween } from '../Row'
-import { TYPE } from '../../theme'
-import QuestionHelper from '../QuestionHelper'
-import Toggle from '../Toggle'
-import { ThemeContext } from 'styled-components/macro'
-import { AutoColumn } from '../Column'
-import { ButtonError } from '../Button'
-import { useSettingsMenuOpen, useToggleSettingsMenu } from '../../state/application/hooks'
 import { Text } from 'rebass'
+import styled, { ThemeContext } from 'styled-components/macro'
+import { useOnClickOutside } from '../../hooks/useOnClickOutside'
+import { ApplicationModal } from '../../state/application/actions'
+import { useModalOpen, useToggleSettingsMenu } from '../../state/application/hooks'
+import {
+  useDarkModeManager,
+  useExpertModeManager,
+  useUserTransactionTTL,
+  useUserSlippageTolerance
+} from '../../state/user/hooks'
+import { TYPE } from '../../theme'
+import { ButtonError } from '../Button'
+import { AutoColumn } from '../Column'
 import Modal from '../Modal'
 import { setLanguageDirection } from '../../utils/language'
 import { useTranslation } from 'react-i18next'
+import QuestionHelper from '../QuestionHelper'
+import { RowBetween, RowFixed } from '../Row'
+import Toggle from '../Toggle'
+import TransactionSettings from '../TransactionSettings'
+import LanguageSettings from '../LanguageSettings'
 
 const StyledMenuIcon = styled(Settings)`
   height: 20px;
@@ -89,24 +89,26 @@ const StyledMenu = styled.div`
 const MenuFlyout = styled.span<{ dir?: string }>`
   direction: ${({ dir }) => setLanguageDirection(dir)};
   min-width: 20.125rem;
-  background-color: ${({ theme }) => theme.bg1};
+  background-color: ${({ theme }) => theme.bg2};
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
     0px 24px 32px rgba(0, 0, 0, 0.01);
-
-  border: 1px solid ${({ theme }) => theme.bg3};
-
-  border-radius: 0.5rem;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   font-size: 1rem;
   position: absolute;
-  top: 3rem;
+  top: 4rem;
   right: 0rem;
   z-index: 100;
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     min-width: 18.125rem;
     right: -46px;
+  `};
+
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    min-width: 18.125rem;
+    top: -22rem;
   `};
 `
 
@@ -129,13 +131,13 @@ const ModalContentWrapper = styled.div`
 export default function SettingsTab() {
   const { t } = useTranslation()
   const node = useRef<HTMLDivElement>()
-  const open = useSettingsMenuOpen()
+  const open = useModalOpen(ApplicationModal.SETTINGS)
   const toggle = useToggleSettingsMenu()
 
   const theme = useContext(ThemeContext)
   const [userSlippageTolerance, setUserslippageTolerance] = useUserSlippageTolerance()
 
-  const [deadline, setDeadline] = useUserDeadline()
+  const [ttl, setTtl] = useUserTransactionTTL()
 
   const [expertMode, toggleExpertMode] = useExpertModeManager()
 
@@ -187,13 +189,13 @@ export default function SettingsTab() {
       </Modal>
       <StyledMenuButton onClick={toggle} id="open-settings-dialog-button">
         <StyledMenuIcon />
-        {expertMode && (
+        {expertMode ? (
           <EmojiWrapper>
             <span role="img" aria-label="wizard-icon">
               🧙
             </span>
           </EmojiWrapper>
-        )}
+        ) : null}
       </StyledMenuButton>
       {open && (
         <MenuFlyout>
@@ -204,8 +206,8 @@ export default function SettingsTab() {
             <TransactionSettings
               rawSlippage={userSlippageTolerance}
               setRawSlippage={setUserslippageTolerance}
-              deadline={deadline}
-              setDeadline={setDeadline}
+              deadline={ttl}
+              setDeadline={setTtl}
             />
             <Text fontWeight={600} fontSize={14} textAlign="start">
               {t('setting.interfaceSettings')}
