@@ -115,6 +115,8 @@
   "liquidity": {
     "add": "افزودن نقدینگی",
     "remove": "حذف نقدینگی",
+    "creating": "ساختن یک جفت",
+    "yourLiquidity": "نقدینگی شما",
     "detailed": "مفصل",
     "simple": "مختصر",
     "amount": "مقدار",
