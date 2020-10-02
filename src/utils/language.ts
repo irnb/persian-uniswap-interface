@@ -40,11 +40,11 @@ export function addMarginToStartOfCSSObject(value: number, otherCss: CSSObject):
   if (getLanguageDirection() === 'rtl') return { ...otherCss, marginRight: value }
   return { ...otherCss, marginLeft: value }
 }
-export function addPaddingToEndOfCSSObject(value: number, otherCss: CSSObject): CSSObject {
-  if (getLanguageDirection() === 'rtl') return { ...otherCss, paddingLeft: value }
-  return { ...otherCss, paddingRight: value }
+export function addPaddingToEndOfCSSObject(value: string): CSSObject {
+  if (getLanguageDirection() === 'rtl') return { paddingLeft: value }
+  return { paddingRight: value }
 }
-export function addPaddingToStartOfCSSObject(value: number, otherCss: CSSObject): CSSObject {
-  if (getLanguageDirection() === 'rtl') return { ...otherCss, paddingRight: value }
-  return { ...otherCss, paddingLeft: value }
+export function addPaddingToStartOfCSSObject(value: string): CSSObject {
+  if (getLanguageDirection() === 'rtl') return { paddingRight: value }
+  return { paddingLeft: value }
 }

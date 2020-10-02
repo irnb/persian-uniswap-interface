@@ -54,13 +54,14 @@ export default function SwapModalFooter({
             fontWeight={500}
             fontSize={14}
             color={theme.text1}
-            style={addPaddingToStartOfCSSObject(10, {
+            style={{
               justifyContent: 'center',
               alignItems: 'center',
               display: 'flex',
               textAlign: 'right',
-              direction: 'ltr'
-            })}
+              direction: 'ltr',
+              ...addPaddingToStartOfCSSObject('10px')
+            }}
           >
             {formatExecutionPrice(trade, showInverted)}
             <StyledBalanceMaxMini onClick={() => setShowInverted(!showInverted)}>
@@ -82,7 +83,7 @@ export default function SwapModalFooter({
                 ? slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4) ?? '-'
                 : slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4) ?? '-'}
             </TYPE.black>
-            <TYPE.black fontSize={14} style={addPaddingToStartOfCSSObject(4, {})}>
+            <TYPE.black fontSize={14} style={addPaddingToStartOfCSSObject('4px')}>
               {trade.tradeType === TradeType.EXACT_INPUT
                 ? trade.outputAmount.currency.symbol
                 : trade.inputAmount.currency.symbol}

@@ -41,9 +41,8 @@ export default function BetterTradeLink({ version }: { version: Version }) {
   }, [location, search, version])
 
   return (
-    //TODO: translate inja
     <VersionLinkContainer>
-      There is a better price for this trade on{' '}
+      {t('poolPage.betterPrice')}
       <StyledInternalLink to={linkDestination}>
         <b>Uniswap {version.toUpperCase()} ↗</b>
       </StyledInternalLink>
@@ -67,7 +66,6 @@ export function DefaultVersionLink() {
   }, [location, search])
 
   return (
-    //TODO: translate inja
     <VersionLinkContainer>
       Showing {version.toUpperCase()} price.{' '}
       <StyledInternalLink to={linkDestination}>

@@ -39,7 +39,6 @@ export default function SlippageTabs() {
   const theme = useContext(ThemeContext)
   // const [language, setLanguage] = useState()
   const changeLanguage = (code: string) => {
-    console.log('injaaaaaaaaa')
     localStorage.setItem('language', code)
     window.location.reload()
   }

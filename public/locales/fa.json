@@ -26,8 +26,8 @@
   "unlockTokenCont": "برای ادامه،‌لطفا توکن را بازگشایی کنید.",
   "transactionDetails": "جزئیات تراکنش",
   "hideDetails": "نمایش ندادن جزئیات",
-  "slippageWarning": "خطر ریزش قیمت",
-  "highSlippageWarning": "  خطر ریزش شدید قیمت",
+  "slippageWarning": "خطر لغزش قیمت",
+  "highSlippageWarning": "  خطر لغزش شدید قیمت",
   "youAreSelling": "شما در حال فروش هستید",
   "orTransFail": "یا تراکنش موفق نبوده است.",
   "youWillReceive": "حداقل دریافتی شما",
@@ -78,7 +78,7 @@
   "enterTokenCont": "یک آدرس توکن را برای ادامه وارد کنید.",
   "priceChange": "پیش بینی افت قیمت",
   "forAtLeast": "حداقل ",
-  "brokenToken": "توکن انتخاب شده با ورژن ۱ یونی‌سواپ سازگار نیست. اضافه کردن نقدینگی باعث قفل شدن سرمایه شما می‌شود.",
+  "brokenToken": "توکن انتخاب شده با نسخه ۱ یونی‌سواپ سازگار نیست. اضافه کردن نقدینگی باعث قفل شدن سرمایه شما می‌شود.",
   "toleranceExplanation": "کم کردن این مقدار، ریسک پیش روی شما را کاهش می‌دهد. به هرحال این احتمال وجود دارد که تراکنش شما در تغییر قیمت های عادی از بین برود  .",
   "tokenSearchPlaceholder": "جستجوی نام یا وارد کردن آدرس",
   "from": "از",
@@ -112,6 +112,8 @@
   "change": "تغییر",
   "copied": "کپی شد",
   "accept": "قبول",
+  "charts": "نمودارها",
+  "manage": "مدیریت",
   "liquidity": {
     "add": "افزودن نقدینگی",
     "remove": "حذف نقدینگی",
@@ -146,7 +148,11 @@
     "yourPoolShares": "سهام شما در استخر",
     "viewPoolInformation": "نمایش اطلاعات استخر ↖️",
     "receiveWETH": "دریافت WETH",
-    "receiveETH": "دریافت ETH"
+    "receiveETH": "دریافت ETH",
+    "rewardTitle": "پاداش سپرده‌گذار",
+    "rewardDesc": "سپرده‌گذاران متناسب با سهم خود از استخر در تمام معاملات 0.3٪ کارمزد کسب می‌کنند. این کارمزد در همان لحظه به موجودی استخر اضافه می‌شود و در زمان برداشت نقدینگی، به کیف پول شما منتقل می‌گردد.",
+    "readMoreProvidingLiquidity": "مطالعه بیشتر درباره سپرده‌گذاری",
+    "viewFeesAndAnalytics": "مشاهده کارمزدها و آمارها"
   },
   "transaction": {
     "viewOnEtherscan": "Etherscan مشاهده تراکنش در",
@@ -190,7 +196,8 @@
     "swapModalDescSell": "ورودی تقریبی است. حداکثر این مبلغ را می‌پردازید: ",
     "swapModalDescPart2": " یا تراکنش لغو خواهد شد",
     "outputWillBe": "خروجی به این آدرس ارسال شد:",
-    "priceUpdated": "قیمت آپدیت شد."
+    "priceUpdated": "قیمت آپدیت شد.",
+    "viewPairAnalytics": "مشاهده آمار جفت‌ها"
   },
   "poolPage": {
     "yourLiquidity": "نقدینگی شما",
@@ -201,7 +208,8 @@
     "v1Found": "نقدینگی ها موجود شما در نسخه 1 uniswap یافت شد",
     "withoutPool": "استخر نقدینگی‌ای که به آن پیوسته‌اید را  نمی‌بینید؟",
     "importIt": "اضافه‌اش کنید.",
-    "importNow": "همین حالا اضافه اش کنید ."
+    "importNow": "همین حالا اضافه اش کنید .",
+    "accountAnalyticsAndFees": "آمار حساب و کارمزدهای تعلق گرفته"
   },
   "setting": {
     "transactionSettings": "تنظیمات تراکنش‌ها",
@@ -209,7 +217,7 @@
     "toggleExpertMode": " تغییر به حالت حرفه ای",
     "toggleExpertModeTooltip": ".با روشن کردن این گزینه، «ماژول های محافظت از ضرر بیش از حد» کنار گذاشته می‌شود. این کار ریسک بالایی دارد",
     "toggleDarkMode": "زمینه تیره",
-    "slippageTolerance": "تحمل ریزش",
+    "slippageTolerance": "تحمل لغزش",
     "slippageToleranceTooltip": "اگر قیمت بیشتر از این درصد افت پیدا کند تراکنش شما مرجوع می‌شود.",
     "transactionDeadline": "مهلت تراکنش",
     "transactionDeadlineTooltip": "اگر تراکنش شما در طول این مدت انجام نشود، مرجوع می‌شود.",
@@ -247,7 +255,7 @@
     "docs": "راهنما",
     "code": "کُد",
     "discord": "دیسکورد",
-    "analytics": "تجزیه و تحلیل"
+    "analytics": "آمارها"
   },
   "account": {
     "title": "حساب کاربری",
@@ -257,5 +265,11 @@
     "copyAddress": "کپی آدرس",
     "showTransactionTitle": "تراکنش های شما اینجا نمایش داده می‌شود...",
     "connectedWith": "اتصال با {{name}}"
+  },
+  "uniPage": {
+    "title": "یونی"
+  },
+  "votePage": {
+    "title": "رأی"
   }
 }

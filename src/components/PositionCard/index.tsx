@@ -104,7 +104,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
             <AutoColumn gap="4px">
               <FixedHeightRow>
                 <Text fontSize={16} fontWeight={500}>
-                  Your pool share:
+                  {t('liquidity.yourPoolShare')}:
                 </Text>
                 <Text fontSize={16} fontWeight={500}>
                   {poolTokenPercentage ? poolTokenPercentage.toFixed(6) + '%' : '-'}
@@ -146,9 +146,8 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
           <TYPE.subHeader style={{ textAlign: 'center' }}>
             <span role="img" aria-label="wizard-icon">
               ⭐️
-            </span>{' '}
-            By adding liquidity you&apos;ll earn 0.3% of all trades on this pair proportional to your share of the pool.
-            Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.
+            </span>
+            {t('liquidity.rewardDesc')}
           </TYPE.subHeader>
         </LightCard>
       )}
@@ -208,13 +207,12 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
             >
               {showMore ? (
                 <>
-                  {' '}
-                  Manage
+                  {t('manage')}
                   <ChevronUp size="20" style={{ marginLeft: '10px' }} />
                 </>
               ) : (
                 <>
-                  Manage
+                  {t('manage')}
                   <ChevronDown size="20" style={{ marginLeft: '10px' }} />
                 </>
               )}
@@ -226,7 +224,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
           <AutoColumn gap="8px">
             <FixedHeightRow>
               <Text fontSize={16} fontWeight={500}>
-                Your pool tokens:
+                {t('liquidity.yourPoolTokens')}:
               </Text>
               <Text fontSize={16} fontWeight={500}>
                 {userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}
@@ -281,8 +279,8 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
                 style={{ width: '100%', textAlign: 'center' }}
                 href={`https://uniswap.info/account/${account}`}
               >
-                {/* //TODO: transalte inja */}
-                View accrued fees and analytics<span style={{ fontSize: '11px' }}>↗</span>
+                {t('liquidity.viewFeesAndAnalytics')}
+                <span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>
             </ButtonSecondary>
             <RowBetween marginTop="10px">

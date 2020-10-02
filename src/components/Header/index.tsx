@@ -30,6 +30,7 @@ import { Dots } from '../swap/styleds'
 import Modal from '../Modal'
 import UniBalanceContent from './UniBalanceContent'
 import usePrevious from '../../hooks/usePrevious'
+import { addPaddingToEndOfCSSObject, setLanguageDirection } from '../../utils/language'
 
 const HeaderFrame = styled.div`
   display: grid;
@@ -119,6 +120,7 @@ const AccountElement = styled.div<{ active: boolean }>`
   white-space: nowrap;
   width: 100%;
   cursor: pointer;
+  direction: ${() => setLanguageDirection()};
 
   :focus {
     border: 1px solid blue;
@@ -300,7 +302,7 @@ export default function Header() {
         </Title>
         <HeaderLinks>
           <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
-            {t('swap')}
+            {t('swapPage.title')}
           </StyledNavLink>
           <StyledNavLink
             id={`pool-nav-link`}
@@ -316,13 +318,13 @@ export default function Header() {
             {t('pool')}
           </StyledNavLink>
           <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
-            UNI
+            {t('uniPage.title')}
           </StyledNavLink>
           <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
-            Vote
+            {t('votePage.title')}
           </StyledNavLink>
           <StyledExternalLink id={`stake-nav-link`} href={'https://uniswap.info'}>
-            Charts <span style={{ fontSize: '11px' }}>↗</span>
+            {t('charts')} <span style={{ fontSize: '11px' }}>↗</span>
           </StyledExternalLink>
         </HeaderLinks>
       </HeaderRow>
@@ -350,7 +352,7 @@ export default function Header() {
                   <HideSmall>
                     <TYPE.white
                       style={{
-                        paddingRight: '.4rem'
+                        ...addPaddingToEndOfCSSObject('0.4rem')
                       }}
                     >
                       <CountUp
@@ -364,7 +366,7 @@ export default function Header() {
                     </TYPE.white>
                   </HideSmall>
                 )}
-                UNI
+                {t('uniPage.title')}
               </UNIAmount>
               <CardNoise />
             </UNIWrapper>

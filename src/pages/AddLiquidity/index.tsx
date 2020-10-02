@@ -335,13 +335,13 @@ export default function AddLiquidity({
                   <BlueCard>
                     <AutoColumn gap="10px">
                       <TYPE.link fontWeight={600} color={'primaryText1'}>
-                        {t('addLiquidity.firstProviderWarning')}
+                        {t('liquidity.firstProviderWarning')}
                       </TYPE.link>
                       <TYPE.link fontWeight={400} color={'primaryText1'}>
-                        {t('addLiquidity.setInitialPriceWarning')}
+                        {t('liquidity.setInitialPriceWarning')}
                       </TYPE.link>
                       <TYPE.link fontWeight={400} color={'primaryText1'}>
-                        {t('addLiquidity.clickSupplyWarning')}
+                        {t('liquidity.clickSupplyWarning')}
                       </TYPE.link>
                     </AutoColumn>
                   </BlueCard>

@@ -120,19 +120,17 @@ export default function Pool() {
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Liquidity provider rewards</TYPE.white>
+                <TYPE.white fontWeight={600}>{t('liquidity.rewardTitle')}</TYPE.white>
               </RowBetween>
               <RowBetween>
-                <TYPE.white fontSize={14}>
-                  {`Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.`}
-                </TYPE.white>
+                <TYPE.white fontSize={14}>{t('liquidity.rewardDesc')}</TYPE.white>
               </RowBetween>
               <ExternalLink
                 style={{ color: 'white', textDecoration: 'underline' }}
                 target="_blank"
                 href="https://uniswap.org/docs/v2/core-concepts/pools/"
               >
-                <TYPE.white fontSize={14}>Read more about providing liquidity</TYPE.white>
+                <TYPE.white fontSize={14}>{t('liquidity.readMoreProvidingLiquidity')}</TYPE.white>
               </ExternalLink>
             </AutoColumn>
           </CardSection>
@@ -176,9 +174,8 @@ export default function Pool() {
               <>
                 <ButtonSecondary>
                   <RowBetween>
-                    {/* //TODO: translate inja */}
                     <ExternalLink href={'https://uniswap.info/account/' + account}>
-                      Account analytics and accrued fees
+                      {t('poolPage.accountAnalyticsAndFees')}
                     </ExternalLink>
                     <span> ↗</span>
                   </RowBetween>

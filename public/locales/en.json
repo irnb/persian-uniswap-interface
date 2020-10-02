@@ -112,6 +112,8 @@
   "change": "Change",
   "copied": "Copied",
   "accept": "Accept",
+  "charts": "Charts",
+  "manage": "Manage",
   "liquidity": {
     "add": "Add Liquidity",
     "remove": "Remove Liquidity",
@@ -146,7 +148,11 @@
     "yourPoolShares": "Your pool share:",
     "viewPoolInformation": "View pool information ↗",
     "receiveWETH": "Receive WETH",
-    "receiveETH": "Receive ETH"
+    "receiveETH": "Receive ETH",
+    "rewardTitle": "Liquidity provider rewards",
+    "rewardDesc": "Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.",
+    "readMoreProvidingLiquidity": "Read more about providing liquidity",
+    "viewFeesAndAnalytics": "View accrued fees and analytics"
   },
   "transaction": {
     "viewOnEtherscan": " ٰView in Etherscan",
@@ -186,7 +192,8 @@
     "swapModalDescBuy": "Output is estimated. You will receive at least",
     "swapModalDescPart2": " or the transaction will revert.",
     "outputWillBe": "Output will be sent to",
-    "priceUpdated": "Price Updated"
+    "priceUpdated": "Price Updated",
+    "viewPairAnalytics": "View pair analytics"
   },
   "poolPage": {
     "yourLiquidity": "Your Liquidity",
@@ -200,7 +207,8 @@
     "importNow": "Import now.",
     "betterPrice": "There is a better price for this trade on",
     "route": "Route",
-    "routingTooltip": "Routing through these tokens resulted in the best price for your trade."
+    "routingTooltip": "Routing through these tokens resulted in the best price for your trade.",
+    "accountAnalyticsAndFees": "Account analytics and accrued fees"
   },
   "setting": {
     "transactionSettings": "Transaction Settings",
@@ -254,5 +262,11 @@
     "copyAddress": "Copy Address",
     "showTransactionTitle": "Your transactions will appear here...",
     "connectedWith": "Connected with {{name}}"
+  },
+  "uniPage": {
+    "title": "UNI"
+  },
+  "votePage": {
+    "title": "Vote"
   }
 }
