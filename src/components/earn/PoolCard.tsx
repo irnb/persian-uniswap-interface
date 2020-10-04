@@ -162,7 +162,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
               </span>
               {`${stakingInfo.rewardRate
                 ?.multiply(`${60 * 60 * 24 * 7}`)
-                ?.toSignificant(4, { groupSeparator: ',' })} UNI / week`}
+                ?.toSignificant(4, { groupSeparator: ',' })} ${t('uniPage.uni/week')}`}
             </TYPE.black>
           </BottomSection>
         </>

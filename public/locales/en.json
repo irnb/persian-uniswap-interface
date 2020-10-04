@@ -114,6 +114,7 @@
   "accept": "Accept",
   "charts": "Charts",
   "manage": "Manage",
+  "edit": "edit",
   "liquidity": {
     "add": "Add Liquidity",
     "remove": "Remove Liquidity",
@@ -276,9 +277,19 @@
     "uni/week": "UNI / week",
     "rewardsBeginIn": "Rewards begin in",
     "rewardsEnsdIn": "Rewards End in",
-    "RewardsHaveEnded": "Rewards have ended!"
+    "rewardsHaveEnded": "Rewards have ended!"
   },
   "votePage": {
-    "title": "Vote"
+    "title": "Vote",
+    "uniswapGovernance": "Uniswap Governance",
+    "uniswapGovernanceDesc": "UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself or delegate your votes to a third party.",
+    "unlockVotes": "Unlock Votes",
+    "readMoreAboutGovernance": "Read more about Uniswap governance",
+    "proposals": "Proposals",
+    "votes": "Votes",
+    "delegatedTo": "Delegated to",
+    "noProposalsFound": "No proposals found.",
+    "proposalsSectionDesc": "Proposals submitted by community members will appear here.",
+    "proposalsSectionHint": "A minimum threshhold of 1% of the total UNI supply is required to submit proposals"
   }
 }

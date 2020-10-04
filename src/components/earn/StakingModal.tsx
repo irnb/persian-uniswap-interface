@@ -20,6 +20,7 @@ import { wrappedCurrencyAmount } from '../../utils/wrappedCurrency'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useTransactionAdder } from '../../state/transactions/hooks'
 import { LoadingView, SubmittedView } from '../ModalViews'
+import { useTranslation } from 'react-i18next'
 
 const HypotheticalRewardRate = styled.div<{ dim: boolean }>`
   display: flex;
@@ -191,7 +192,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
         }
       })
   }
-
+  const { t } = useTranslation()
   return (
     <Modal isOpen={isOpen} onDismiss={wrappedOnDismiss} maxHeight={90}>
       {!attempting && !hash && (
@@ -220,7 +221,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
 
             <TYPE.black>
               {hypotheticalRewardRate.multiply((60 * 60 * 24 * 7).toString()).toSignificant(4, { groupSeparator: ',' })}{' '}
-              UNI / week
+              {t('uniPage.uni/week')}
             </TYPE.black>
           </HypotheticalRewardRate>
 
@@ -231,14 +232,14 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
               confirmed={approval === ApprovalState.APPROVED || signatureData !== null}
               disabled={approval !== ApprovalState.NOT_APPROVED || signatureData !== null}
             >
-              Approve
+              {t('approve')}
             </ButtonConfirmed>
             <ButtonError
               disabled={!!error || (signatureData === null && approval !== ApprovalState.APPROVED)}
               error={!!error && !!parsedAmount}
               onClick={onStake}
             >
-              {error ?? 'Deposit'}
+              {error ?? t('deposit')}
             </ButtonError>
           </RowBetween>
           <ProgressCircles steps={[approval === ApprovalState.APPROVED || signatureData !== null]} disabled={true} />
@@ -256,7 +257,9 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
         <SubmittedView onDismiss={wrappedOnDismiss} hash={hash}>
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.largeHeader>Transaction Submitted</TYPE.largeHeader>
-            <TYPE.body fontSize={20}>Deposited {parsedAmount?.toSignificant(4)} UNI-V2</TYPE.body>
+            <TYPE.body fontSize={20}>
+              {t('deposited')} {parsedAmount?.toSignificant(4)} UNI-V2
+            </TYPE.body>
           </AutoColumn>
         </SubmittedView>
       )}
