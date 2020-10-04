@@ -272,7 +272,11 @@
     "totalDeposited": "Total deposited",
     "poolRate": "Pool rate",
     "yourRate": "Your rate",
-    "participatingPools": "Participating pools"
+    "participatingPools": "Participating pools",
+    "uni/week": "UNI / week",
+    "rewardsBeginIn": "Rewards begin in",
+    "rewardsEnsdIn": "Rewards End in",
+    "RewardsHaveEnded": "Rewards have ended!"
   },
   "votePage": {
     "title": "Vote"

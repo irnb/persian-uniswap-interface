@@ -275,7 +275,11 @@
     "totalDeposited": "مجموع سپرده‌ها",
     "poolRate": "نرخ استخر",
     "yourRate": "نرخ شما",
-    "participatingPools": "استخرهای مشارکت"
+    "participatingPools": "استخرهای مشارکت",
+    "uni/week": " یونی / هفته",
+    "rewardsBeginIn": "پاداش‌دهی به زودی آغاز می‌شود:",
+    "rewardsEndIn": "پاداش‌دهی مدتی دیگر، پایان می‌یابد:",
+    "RewardsHaveEnded": "پاداش‌دهی پایان یافت!"
   },
   "votePage": {
     "title": "رأی"
