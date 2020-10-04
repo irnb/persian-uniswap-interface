@@ -34,15 +34,15 @@ export function Countdown({ exactEnd }: { exactEnd?: Date }) {
   let timeRemaining: number
   let message: string
   if (timeUntilGenesis >= 0) {
-    message = t('uniPage.rewardsBeginIn')
+    message = t('earnPage.rewardsBeginIn')
     timeRemaining = timeUntilGenesis
   } else {
     const ongoing = timeUntilEnd >= 0
     if (ongoing) {
-      message = t('uniPage.rewardsEndIn')
+      message = t('earnPage.rewardsEndIn')
       timeRemaining = timeUntilEnd
     } else {
-      message = t('uniPage.RewardsHaveEnded')
+      message = t('earnPage.RewardsHaveEnded')
       timeRemaining = Infinity
     }
   }

@@ -115,6 +115,7 @@
   "charts": "Charts",
   "manage": "Manage",
   "edit": "edit",
+  "back": "back",
   "liquidity": {
     "add": "Add Liquidity",
     "remove": "Remove Liquidity",
@@ -264,7 +265,7 @@
     "showTransactionTitle": "Your transactions will appear here...",
     "connectedWith": "Connected with {{name}}"
   },
-  "uniPage": {
+  "earnPage": {
     "uni": "UNI",
     "miningAlertTitle": "Uniswap liquidity mining",
     "miningAlertDesc": "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token.",

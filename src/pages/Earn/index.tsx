@@ -52,17 +52,17 @@ export default function Earn() {
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>{t('uniPage.miningAlertTitle')}</TYPE.white>
+                <TYPE.white fontWeight={600}>{t('earnPage.miningAlertTitle')}</TYPE.white>
               </RowBetween>
               <RowBetween>
-                <TYPE.white fontSize={14}>{t('uniPage.miningAlertDesc')}</TYPE.white>
+                <TYPE.white fontSize={14}>{t('earnPage.miningAlertDesc')}</TYPE.white>
               </RowBetween>{' '}
               <ExternalLink
                 style={{ color: 'white', textDecoration: 'underline' }}
                 href="https://uniswap.org/blog/uni/"
                 target="_blank"
               >
-                <TYPE.white fontSize={14}>{t('uniPage.readMoreAboutUni')}</TYPE.white>
+                <TYPE.white fontSize={14}>{t('earnPage.readMoreAboutUni')}</TYPE.white>
               </ExternalLink>
             </AutoColumn>
           </CardSection>
@@ -73,7 +73,7 @@ export default function Earn() {
 
       <AutoColumn gap="lg" style={{ width: '100%', maxWidth: '720px' }}>
         <DataRow style={{ alignItems: 'baseline' }}>
-          <TYPE.mediumHeader style={{ marginTop: '0.5rem' }}>{t('uniPage.participatingPools')}</TYPE.mediumHeader>
+          <TYPE.mediumHeader style={{ marginTop: '0.5rem' }}>{t('earnPage.participatingPools')}</TYPE.mediumHeader>
           <Countdown exactEnd={stakingInfos?.[0]?.periodFinish} />
         </DataRow>
 
@@ -81,7 +81,7 @@ export default function Earn() {
           {stakingRewardsExist && stakingInfos?.length === 0 ? (
             <Loader style={{ margin: 'auto' }} />
           ) : !stakingRewardsExist ? (
-            t('uniPage.noActiveRewards')
+            t('earnPage.noActiveRewards')
           ) : (
             stakingInfos?.map(stakingInfo => {
               // need to sort by added liquidity here

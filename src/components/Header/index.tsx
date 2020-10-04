@@ -98,16 +98,19 @@ const HeaderElementWrap = styled.div`
 `
 
 const HeaderRow = styled(RowFixed)`
+  flex-direction: row-reverse;
   ${({ theme }) => theme.mediaWidth.upToMedium`
    width: 100%;
+   
   `};
 `
 
 const HeaderLinks = styled(Row)`
   justify-content: center;
+
   ${({ theme }) => theme.mediaWidth.upToMedium`
     padding: 1rem 0 1rem 1rem;
-    justify-content: flex-end;
+    justify-content: flex-start;
 `};
 `
 
@@ -318,7 +321,7 @@ export default function Header() {
             {t('pool')}
           </StyledNavLink>
           <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
-            {t('uniPage.uni')}
+            {t('earnPage.uni')}
           </StyledNavLink>
           <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
             {t('votePage.title')}
@@ -366,7 +369,7 @@ export default function Header() {
                     </TYPE.white>
                   </HideSmall>
                 )}
-                {t('uniPage.uni')}
+                {t('earnPage.uni')}
               </UNIAmount>
               <CardNoise />
             </UNIWrapper>
