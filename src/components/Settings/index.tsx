@@ -108,7 +108,7 @@ const MenuFlyout = styled.span<{ dir?: string }>`
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
     min-width: 18.125rem;
-    top: -22rem;
+    top: -28rem;
   `};
 `
 

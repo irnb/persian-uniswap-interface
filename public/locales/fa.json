@@ -267,7 +267,15 @@
     "connectedWith": "اتصال با {{name}}"
   },
   "uniPage": {
-    "title": "یونی"
+    "uni": "یونی",
+    "miningAlertTitle": "استخراج یونی",
+    "miningAlertDesc": "رمزهای ارائه دهنده نقدینگی خود را برای دریافت یونی ، (رمز حاکمیت پروتکل یونی‌سواپ) واریز کنید.",
+    "readMoreAboutUni": "مطالعه بیشتر درباره رمزارز یونی",
+    "noActiveRewards": "پاداش فعالی وجود ندارد",
+    "totalDeposited": "مجموع سپرده‌ها",
+    "poolRate": "نرخ استخر",
+    "yourRate": "نرخ شما",
+    "participatingPools": "استخرهای مشارکت"
   },
   "votePage": {
     "title": "رأی"

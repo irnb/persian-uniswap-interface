@@ -13,7 +13,7 @@ import CurrencyLogo from '../CurrencyLogo'
 import { RowBetween, RowFixed } from '../Row'
 import { TruncatedText, SwapShowAcceptChanges } from './styleds'
 import { useTranslation } from 'react-i18next'
-import { addMarginToEndOfCSSObject } from '../../utils/language'
+import { addMarginToStartOfCSSObject } from '../../utils/language'
 
 export default function SwapModalHeader({
   trade,
@@ -41,7 +41,7 @@ export default function SwapModalHeader({
     <AutoColumn gap={'md'} style={{ marginTop: '20px' }}>
       <RowBetween align="flex-end">
         <RowFixed gap={'0px'}>
-          <CurrencyLogo currency={trade.inputAmount.currency} size={'24px'} style={addMarginToEndOfCSSObject(12, {})} />
+          <CurrencyLogo currency={trade.inputAmount.currency} size={'24px'} style={addMarginToStartOfCSSObject('12')} />
           <TruncatedText
             fontSize={24}
             fontWeight={500}
@@ -64,7 +64,7 @@ export default function SwapModalHeader({
           <CurrencyLogo
             currency={trade.outputAmount.currency}
             size={'24px'}
-            style={addMarginToEndOfCSSObject(12, {})}
+            style={addMarginToStartOfCSSObject('12')}
           />
           <TruncatedText
             fontSize={24}
@@ -90,7 +90,7 @@ export default function SwapModalHeader({
         <SwapShowAcceptChanges justify="flex-start" gap={'0px'}>
           <RowBetween>
             <RowFixed>
-              <AlertTriangle size={20} style={addMarginToEndOfCSSObject(8, { minWidth: 24 })} />
+              <AlertTriangle size={20} style={{ minWidth: 24, ...addMarginToStartOfCSSObject('8') }} />
               <TYPE.main color={theme.primary1}> {t('swapPage.priceUpdated')}</TYPE.main>
             </RowFixed>
             <ButtonPrimary

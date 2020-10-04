@@ -318,7 +318,7 @@ export default function Header() {
             {t('pool')}
           </StyledNavLink>
           <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
-            {t('uniPage.title')}
+            {t('uniPage.uni')}
           </StyledNavLink>
           <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
             {t('votePage.title')}
@@ -366,7 +366,7 @@ export default function Header() {
                     </TYPE.white>
                   </HideSmall>
                 )}
-                {t('uniPage.title')}
+                {t('uniPage.uni')}
               </UNIAmount>
               <CardNoise />
             </UNIWrapper>

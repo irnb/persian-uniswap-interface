@@ -14,6 +14,8 @@ import { unwrappedToken } from '../../utils/wrappedCurrency'
 import { useTotalSupply } from '../../data/TotalSupply'
 import { usePair } from '../../data/Reserves'
 import useUSDCPrice from '../../utils/useUSDCPrice'
+import { useTranslation } from 'react-i18next'
+import { addMarginToStartOfCSSObject } from '../../utils/language'
 
 const StatContainer = styled.div`
   display: flex;
@@ -73,6 +75,7 @@ const BottomSection = styled.div<{ showBackground: boolean }>`
 `
 
 export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) {
+  const { t } = useTranslation()
   const token0 = stakingInfo.tokens[0]
   const token1 = stakingInfo.tokens[1]
 
@@ -117,20 +120,20 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
 
       <TopSection>
         <DoubleCurrencyLogo currency0={currency0} currency1={currency1} size={24} />
-        <TYPE.white fontWeight={600} fontSize={24} style={{ marginLeft: '8px' }}>
+        <TYPE.white fontWeight={600} fontSize={24} style={addMarginToStartOfCSSObject('8px')}>
           {currency0.symbol}-{currency1.symbol}
         </TYPE.white>
 
         <StyledInternalLink to={`/uni/${currencyId(currency0)}/${currencyId(currency1)}`} style={{ width: '100%' }}>
           <ButtonPrimary padding="8px" borderRadius="8px">
-            {isStaking ? 'Manage' : 'Deposit'}
+            {isStaking ? t('manage') : t('deposit')}
           </ButtonPrimary>
         </StyledInternalLink>
       </TopSection>
 
       <StatContainer>
         <RowBetween>
-          <TYPE.white> Total deposited</TYPE.white>
+          <TYPE.white>{t('uniPage.totalDeposited')}</TYPE.white>
           <TYPE.white>
             {valueOfTotalStakedAmountInUSDC
               ? `$${valueOfTotalStakedAmountInUSDC.toFixed(0, { groupSeparator: ',' })}`
@@ -138,7 +141,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
           </TYPE.white>
         </RowBetween>
         <RowBetween>
-          <TYPE.white> Pool rate </TYPE.white>
+          <TYPE.white> {t('uniPage.poolRate')} </TYPE.white>
           <TYPE.white>{`${stakingInfo.totalRewardRate
             ?.multiply(`${60 * 60 * 24 * 7}`)
             ?.toFixed(0, { groupSeparator: ',' })} UNI / week`}</TYPE.white>
@@ -150,7 +153,7 @@ export default function PoolCard({ stakingInfo }: { stakingInfo: StakingInfo }) 
           <Break />
           <BottomSection showBackground={true}>
             <TYPE.black color={'white'} fontWeight={500}>
-              <span>Your rate</span>
+              <span>{t('uniPage.yourRate')}</span>
             </TYPE.black>
 
             <TYPE.black style={{ textAlign: 'right' }} color={'white'} fontWeight={500}>

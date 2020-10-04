@@ -32,13 +32,13 @@ export function setMarginToEnd(value?: string): string {
   if (getLanguageDirection() === 'rtl') return `margin-left:${value}`
   return `margin-right:${value}`
 }
-export function addMarginToEndOfCSSObject(value: number, otherCss: CSSObject): CSSObject {
-  if (getLanguageDirection() === 'rtl') return { ...otherCss, marginLeft: value }
-  return { ...otherCss, marginRight: value }
+export function addMarginToEndOfCSSObject(value: string): CSSObject {
+  if (getLanguageDirection() === 'rtl') return { marginLeft: value }
+  return { marginRight: value }
 }
-export function addMarginToStartOfCSSObject(value: number, otherCss: CSSObject): CSSObject {
-  if (getLanguageDirection() === 'rtl') return { ...otherCss, marginRight: value }
-  return { ...otherCss, marginLeft: value }
+export function addMarginToStartOfCSSObject(value: string): CSSObject {
+  if (getLanguageDirection() === 'rtl') return { marginRight: value }
+  return { marginLeft: value }
 }
 export function addPaddingToEndOfCSSObject(value: string): CSSObject {
   if (getLanguageDirection() === 'rtl') return { paddingLeft: value }

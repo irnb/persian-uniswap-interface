@@ -264,7 +264,15 @@
     "connectedWith": "Connected with {{name}}"
   },
   "uniPage": {
-    "title": "UNI"
+    "uni": "UNI",
+    "miningAlertTitle": "Uniswap liquidity mining",
+    "miningAlertDesc": "Deposit your Liquidity Provider tokens to receive UNI, the Uniswap protocol governance token.",
+    "readMoreAboutUni": "Read More about UNI",
+    "noActiveRewards": "No active rewards",
+    "totalDeposited": "Total deposited",
+    "poolRate": "Pool rate",
+    "yourRate": "Your rate",
+    "participatingPools": "Participating pools"
   },
   "votePage": {
     "title": "Vote"
